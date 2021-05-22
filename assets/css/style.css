@@ -1,4 +1,6 @@
-* { box-sizing: border-box; }
+* { 
+    box-sizing: border-box; 
+}
 
 @-webkit-keyframes ticker {
   0% {
@@ -28,14 +30,14 @@
 
 .ticker-container {
   
-  position: fixed;
-  top: 10;
+  position: relative;
   width: 100%;
   overflow: hidden;
   height: 2rem;
-  background-color: rgba(199,199,191,0.7);
+  background-color: black;
   padding-left: 100%;
   box-sizing: content-box;
+  margin-bottom: 10px;
 }
 .ticker {
 
@@ -61,11 +63,35 @@ box-sizing: content-box;
     display: inline-block;
 
     padding: 0 2rem;
-    font-size: 1rem;
-    color: black;   
+    font-size: 0.9rem;
+    color: #E6E6E3;   
 
 }
 
 
-body { padding-bottom: 5rem; }
-h1,h2,p {padding: 0 5%;}
+html{
+    background-color: #b8b8b5;
+}
+
+body { 
+    padding-bottom: 5rem; 
+}
+
+#footer{
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: #b8b8b5;
+}
+
+h1,h2,p {
+    padding: 0 5%;
+}
+
+.container{
+    margin-top: 50px;
+}
+
+.dropdown-item{
+    width: 20rem;
+}
