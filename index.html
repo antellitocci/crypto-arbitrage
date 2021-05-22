@@ -7,28 +7,290 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Import Bulma Framework-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <!--Import FontAwesome Icons-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-iKbFRxucmOHIcpWdX9NTZ5WETOPm0Goy0WmfyNcl52qSYtc2Buk0NCe6jU1sWWNB" crossorigin="anonymous">
+    <!--Import custom stylesheets-->
+    <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>Document</title>
+    <title>Crypto Arbitrage</title>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <h1 class="logo"></h1>
-
-            <nav> <img src="https://fontmeme.com/permalink/210522/fcd30b80c8422675cbb5f69b9a6c8ae8.png" alt="" id="img crypto">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><i class="fa fa-search" aria-hidden="true"></i></li>
-                </ul>
-            </nav>
+<!-- Start of navagation bar -->
+    <div class="block">
+        <!-- <nav class="navbar is-fixed-top"> -->
+        <div class="navbar-menu">
+            <div class="navbar-start">
+              <!-- navbar items -->
+              <a class="navbar-item">
+                <img src="https://fontmeme.com/permalink/210522/fcd30b80c8422675cbb5f69b9a6c8ae8.png" id="img_crypto" width="112" height="28" alt="">
+                </a>
+              <h1 class="navbar-item center">
+                  CRYPTO ARBITRAGE
+              </h1>
+            
+            </div> 
+            <div class="navbar-end">
+            <!-- navbar items -->
+          
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link is-arrowless">
+                    Link without arrow
+                    </a>
+                    <div class="navbar-dropdown">
+                    <a class="navbar-item">
+                        Overview
+                    </a>
+                    <a class="navbar-item">
+                        Elements
+                    </a>
+                    <a class="navbar-item">
+                        Components
+                    </a>
+                    <hr class="navbar-divider">
+                    <!-- <div class="navbar-item">
+                        Crypto Abritrage
+                    </div> -->
+                </div>
+            </div>
         </div>
-    </header>
+    </div>
+    <!-- End of navagation bar -->
+     <!--Start Ticker-->
+    <div class="ticker-container">
+        <div class="ticker">
+            <div class="ticker-item">
+                <span class="ti-logo"><img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579" style="height: 15px; width: 15px;"/></span>
+                <span class="ti-tick"> BTC</span>
+                <span class="ti-perf"> 10%</span>
+            </div>
+            <div class="ticker-item">
+                <span class="ti-logo"><img src="https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880" style="height: 15px; width: 15px;"/></span>
+                <span class="ti-tick"> ETH</span>
+                <span class="ti-perf"> 50%</span>
+            </div>
+        </div>
+    </div>
+    <!-- Start of favorites section -->
+    <div class='columns'>
+        <div class="card">
+            <!-- <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+              </figure>
+            </div> -->
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="media-content" >
+                  <p class="title is-4">Coin Symbol</p>
+                  <p class="subtitle is-6">Coin Name</p>
+                </div>
+              </div>
+          
+              <div class="content">
+                Current Price 
+                <!-- <a>@bulmaio</a>.
+                <a href="#">#css</a> <a href="#">#responsive</a>
+                <br>
+                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time> -->
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <!-- <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+              </figure>
+            </div> -->
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                    <p class="title is-4">Coin Symbol</p>
+                    <p class="subtitle is-6">Coin Name</p>
+                </div>
+              </div>
+          
+              <div class="content">
+                Current Price 
+                <!-- <a>@bulmaio</a>.
+                <a href="#">#css</a> <a href="#">#responsive</a>
+                <br>
+                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time> -->
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <!-- <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+              </figure>
+            </div> -->
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                    <p class="title is-4">Coin Symbol</p>
+                    <p class="subtitle is-6">Coin Name</p>
+                </div>
+              </div>
+          
+              <div class="content">
+                Current Price 
+                <!-- <a>@bulmaio</a>.
+                <a href="#">#css</a> <a href="#">#responsive</a>
+                <br>
+                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time> -->
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <!-- <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+              </figure>
+            </div> -->
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                    <p class="title is-4">Coin Symbol</p>
+                    <p class="subtitle is-6">Coin Name</p>
+                </div>
+              </div>
+          
+              <div class="content">
+                Current Price 
+                <!-- <a>@bulmaio</a>.
+                <a href="#">#css</a> <a href="#">#responsive</a>
+                <br>
+                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time> -->
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <!-- <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+              </figure>
+            </div> -->
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                    <p class="title is-4">Coin Symbol</p>
+                    <p class="subtitle is-6">Coin Name</p>
+                </div>
+              </div>
+          
+              <div class="content">
+                Current Price 
+                <!-- <a>@bulmaio</a>.
+                <a href="#">#css</a> <a href="#">#responsive</a>
+                <br>
+                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time> -->
+              </div>
+            </div>
+          </div>
 
+    </div>
+    </div>
+    <!-- End of favorites section -->
 
+    <!--User Preferences-->
+    <div class="container">
+        <span>Select Base Currency: </span>
+        <div class="dropdown">
+            <div class="dropdown-trigger">
+                <button class="button is-small" style="background-color: black; color: lightgray; font-weight: bold; border: 1px solid black;" aria-haspopup="true" aria-controls="dropdown-menu3">
+                    <span>USD <i class="fas fa-caret-down"></i></span>
+                </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+              <div class="dropdown-content">
+                  <span style="text-align: center;"><h4 style="font-weight: bolder;">Popular Currencies</h4></span>
+                <div class="columns is-multiline menu-cols">
+                    <div class="dropdown-item column is-one-quarter">
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">USD </span><span> US Dollar</span>
+                    </div>
+                    <div class="dropdown-item column is-one-quarter">
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">EUR </span><span> Euro</span>
+                    </div>
+                    <div class="dropdown-item column is-one-quarter">
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">CNY </span><span> Chinese Yuan</span>
+                    </div>
+                    <div class="dropdown-item column is-one-quarter">
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">KRW </span><span> South Korean Won</span>
+                    </div>
+                    <div class="dropdown-item column is-one-quarter">
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">JPY </span><span> Japanese Yen</span>
+                    </div>
+                    <div class="dropdown-item column is-one-quarter">
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">CAD </span><span> Canadian Dollar</span>
+                    </div>
+                    <div class="dropdown-item column is-one-quarter">
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">GBP </span><span> British Pound Sterling</span>
+                    </div>
+                    <div class="dropdown-item column is-one-quarter">
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">RUB </span><span> Russian Ruble</span>
+                    </div>
+                </div>
+                <hr class="dropdown-divider"/>
+                <span style="text-align: center;"><h4 style="font-weight: bolder;">Fiat Currencies</h4></span>
+                <div class="columns is-multiline menu-cols">
+                    <div class="dropdown-item column is-one-quarter">
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AED </span><span> UAE Dirham</span>
+                    </div>
+                    <div class="dropdown-item column is-one-quarter">
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AFN </span><span> Afghan Afghani</span>
+                    </div>
+                    <div class="dropdown-item column is-one-quarter">
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">ALL </span><span> Albanian Lek</span>
+                    </div>
+                    <div class="dropdown-item column is-one-quarter">
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AMD </span><span> Armenian Dram</span>
+                    </div>
+                    <div class="dropdown-item column is-one-quarter">
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">ANG </span><span> Netherlands Antillian Guilder</span>
+                    </div>
+                    <div class="dropdown-item column is-one-quarter">
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AOA </span><span> Angolan Kwanza</span>
+                    </div>
+                    <div class="dropdown-item column is-one-quarter">
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">ARS </span><span> Argentine Peso</span>
+                    </div>
+                    <div class="dropdown-item column is-one-quarter">
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AUD </span><span> Australian Dollar</span>
+                    </div>
+                    <div class="dropdown-item column is-one-quarter">
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AWG </span><span> Aruban Florin</span>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
 
     <table>
         <tr>
@@ -64,6 +326,14 @@
 
         </tr>
     </table>
-</body>
+    <footer class="navbar is-fixed-bottom" id="footer">
+        <p>Cryptocurrency data provided by <span><a href="https://www.coingecko.com/en/api" target="_blank">CoinGecko API</a></span></p>
+    </footer>
 
+<!--Import JQuery-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!--Link to Personal Script-->
+<script src="assets/scripts/script.js"></script>
+<script src='./js/favorites.js'></script>   
+</body>
 </html>
