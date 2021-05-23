@@ -45,7 +45,6 @@ height: 2rem;
 line-height: 2rem;  
 white-space: nowrap;
 padding-left: 100%;
-padding-right: 100%;
 box-sizing: content-box;
 
 -webkit-animation-iteration-count: infinite; 
@@ -54,8 +53,8 @@ box-sizing: content-box;
         animation-timing-function: linear;
 -webkit-animation-name: ticker;
         animation-name: ticker;
--webkit-animation-duration: 60s;
-        animation-duration: 60s;
+-webkit-animation-duration: 200s;
+        animation-duration: 200s;
 }
 
 .ticker-item {
@@ -73,14 +72,9 @@ html{
     background-color: #b8b8b5;
 }
 
-body { 
-    padding-bottom: 5rem; 
-}
-
-#footer{
-    align-items: center;
-    justify-content: center;
-    background-color: black;
+footer{
+    margin-top: 50px;
+    background-color: black !important;
     color: #b8b8b5;
 }
 

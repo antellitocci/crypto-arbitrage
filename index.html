@@ -58,17 +58,7 @@
     <!-- End of navagation bar -->
      <!--Start Ticker-->
     <div class="ticker-container">
-        <div class="ticker">
-            <div class="ticker-item">
-                <span class="ti-logo"><img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579" style="height: 15px; width: 15px;"/></span>
-                <span class="ti-tick"> BTC</span>
-                <span class="ti-perf"> 10%</span>
-            </div>
-            <div class="ticker-item">
-                <span class="ti-logo"><img src="https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880" style="height: 15px; width: 15px;"/></span>
-                <span class="ti-tick"> ETH</span>
-                <span class="ti-perf"> 50%</span>
-            </div>
+        <div class="ticker" id="ticker-tape">
         </div>
     </div>
     <!-- Start of favorites section -->
@@ -230,64 +220,64 @@
                 </button>
             </div>
             <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-              <div class="dropdown-content">
+              <div class="dropdown-content" style="background-color: lightgray;">
                   <span style="text-align: center;"><h4 style="font-weight: bolder;">Popular Currencies</h4></span>
                 <div class="columns is-multiline menu-cols">
-                    <div class="dropdown-item column is-one-quarter">
+                    <a class="dropdown-item column is-one-quarter">
                         <span style="font-weight: bold; color: rgba(0,0,0,0.5);">USD </span><span> US Dollar</span>
-                    </div>
-                    <div class="dropdown-item column is-one-quarter">
+                    </a>
+                    <a class="dropdown-item column is-one-quarter">
                         <span style="font-weight: bold; color: rgba(0,0,0,0.5);">EUR </span><span> Euro</span>
-                    </div>
-                    <div class="dropdown-item column is-one-quarter">
+                    </a>
+                    <a class="dropdown-item column is-one-quarter">
                         <span style="font-weight: bold; color: rgba(0,0,0,0.5);">CNY </span><span> Chinese Yuan</span>
-                    </div>
-                    <div class="dropdown-item column is-one-quarter">
+                    </a>
+                    <a class="dropdown-item column is-one-quarter">
                         <span style="font-weight: bold; color: rgba(0,0,0,0.5);">KRW </span><span> South Korean Won</span>
-                    </div>
-                    <div class="dropdown-item column is-one-quarter">
+                    </a>
+                    <a class="dropdown-item column is-one-quarter">
                         <span style="font-weight: bold; color: rgba(0,0,0,0.5);">JPY </span><span> Japanese Yen</span>
-                    </div>
-                    <div class="dropdown-item column is-one-quarter">
+                    </a>
+                    <a class="dropdown-item column is-one-quarter">
                         <span style="font-weight: bold; color: rgba(0,0,0,0.5);">CAD </span><span> Canadian Dollar</span>
-                    </div>
-                    <div class="dropdown-item column is-one-quarter">
+                    </a>
+                    <a class="dropdown-item column is-one-quarter">
                         <span style="font-weight: bold; color: rgba(0,0,0,0.5);">GBP </span><span> British Pound Sterling</span>
-                    </div>
-                    <div class="dropdown-item column is-one-quarter">
+                    </a>
+                    <a class="dropdown-item column is-one-quarter">
                         <span style="font-weight: bold; color: rgba(0,0,0,0.5);">RUB </span><span> Russian Ruble</span>
-                    </div>
+                    </a>
                 </div>
                 <hr class="dropdown-divider"/>
                 <span style="text-align: center;"><h4 style="font-weight: bolder;">Fiat Currencies</h4></span>
                 <div class="columns is-multiline menu-cols">
-                    <div class="dropdown-item column is-one-quarter">
+                    <a class="dropdown-item column is-one-quarter">
                         <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AED </span><span> UAE Dirham</span>
-                    </div>
-                    <div class="dropdown-item column is-one-quarter">
+                    </a>
+                    <a class="dropdown-item column is-one-quarter">
                         <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AFN </span><span> Afghan Afghani</span>
-                    </div>
-                    <div class="dropdown-item column is-one-quarter">
+                    </a>
+                    <a class="dropdown-item column is-one-quarter">
                         <span style="font-weight: bold; color: rgba(0,0,0,0.5);">ALL </span><span> Albanian Lek</span>
-                    </div>
-                    <div class="dropdown-item column is-one-quarter">
+                    </a>
+                    <a class="dropdown-item column is-one-quarter">
                         <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AMD </span><span> Armenian Dram</span>
-                    </div>
-                    <div class="dropdown-item column is-one-quarter">
+                    </a>
+                    <a class="dropdown-item column is-one-quarter">
                         <span style="font-weight: bold; color: rgba(0,0,0,0.5);">ANG </span><span> Netherlands Antillian Guilder</span>
-                    </div>
-                    <div class="dropdown-item column is-one-quarter">
+                    </a>
+                    <a class="dropdown-item column is-one-quarter">
                         <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AOA </span><span> Angolan Kwanza</span>
-                    </div>
-                    <div class="dropdown-item column is-one-quarter">
+                    </a>
+                    <a class="dropdown-item column is-one-quarter">
                         <span style="font-weight: bold; color: rgba(0,0,0,0.5);">ARS </span><span> Argentine Peso</span>
-                    </div>
-                    <div class="dropdown-item column is-one-quarter">
+                    </a>
+                    <a class="dropdown-item column is-one-quarter">
                         <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AUD </span><span> Australian Dollar</span>
-                    </div>
-                    <div class="dropdown-item column is-one-quarter">
+                    </a>
+                    <a class="dropdown-item column is-one-quarter">
                         <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AWG </span><span> Aruban Florin</span>
-                    </div>
+                    </a>
                 </div>
               </div>
             </div>
@@ -297,33 +287,42 @@
     <div class="container">
         <table class="table is-fullwidth">
             <thead>
-                <tr style="font-size: 0.85em;">
+                <tr style="font-size: 0.85em; background-color: darkslateblue;">
                   <th></th>
-                  <th>#</th>
-                  <th>Coin</th>
+                  <th style="color: white;">#</th>
+                  <th style="color: white;">Coin</th>
                   <th></th>
-                  <th><abbr title="Coin in base currency">Price/Base</abbr></th>
-                  <th><abbr title="Coin's cost in EUR converted to base currency">Price/EUR/Base</abbr></th>
-                  <th><abbr title="Coin's cost in GBP converted to base currency">Price/GBP/Base</abbr></th>
-                  <th><abbr title="Coin's cost in JPY converted to base currency">Price/JPY/Base</abbr></th>
-                  <th><abbr title="Coin's cost in KRW converted to base currency">Price/KRW/Base</abbr></th>
-                  <th>1-Day</th>
-                  <th>7-Day</th>
-                  <th>Chart</th>
+                  <th style="color: white;"><abbr title="Coin in base currency">Price/Base</abbr></th>
+                  <th style="color: white;"><abbr title="Coin's cost in EUR converted to base currency">Price/EUR/Base</abbr></th>
+                  <th style="color: white;"><abbr title="Coin's cost in GBP converted to base currency">Price/GBP/Base</abbr></th>
+                  <th style="color: white;"><abbr title="Coin's cost in JPY converted to base currency">Price/JPY/Base</abbr></th>
+                  <th style="color: white;"><abbr title="Coin's cost in KRW converted to base currency">Price/KRW/Base</abbr></th>
+                  <th style="color: white;">1-Day</th>
+                  <th style="color: white;">7-Day</th>
+                  <th style="color: white;">Chart</th>
                 </tr>
             </thead>
             <tbody id="crypto-table">
             </tbody>
         </table>
     </div>
-    <footer class="navbar is-fixed-bottom" id="footer">
-        <p>Cryptocurrency data provided by <span><a href="https://www.coingecko.com/en/api" target="_blank">CoinGecko API</a></span></p>
-    </footer>
 
-<!--Import JQuery-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!--Link to Personal Script-->
-<script src="assets/scripts/script.js"></script>
-<script src="./js/favorites.js"></script>   
+
+    <!--Import JQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--Link to Personal Script-->
+    <script src="assets/scripts/script.js"></script>
+    <script src="./js/favorites.js"></script>   
 </body>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <b>Created by:</b> <a href="https://github.com/lmcmanaman" target="_blank">Leslie McManaman</a> | 
+            <a href="https://github.com/ghazie754" target="_blank">Ghazi Ramadan</a> | 
+            <a href="https://github.com/antellitocci" target="_blank">Andrew Tellitocci</a>
+        </p>
+        <p>Cryptocurrency data provided by <span><a href="https://www.coingecko.com/en/api" target="_blank">CoinGecko API</a></span></p>
+        <p>Fiat currency exchange rate data provided by <span><a href="https://www.exchangerate-api.com/" target="_blank">Exchange Rate API</a></span></p>
+    </div>
+</footer>
 </html>

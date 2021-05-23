@@ -33,6 +33,21 @@ function getCryptocurrenciesTable(){
           var crypto1Y = data[i].price_change_percentage_1y_in_currency;
           var cryptoChart = data[i].sparkline_in_7d;
 
+
+          //create ticker items
+          var tickerItemElem = $("<div>").addClass("ticker-item");
+          var tickerLogoElem = $("<span>").html('<img src="' + cryptoImg +'" style="height: 15px; width: 15px;"/>')
+          var tickerCryptTick = $("<span>").html(" " + cryptoTicker.toUpperCase());
+          var tickerCryptPerf = $("<span>").html(" " + parseFloat(crypto1D.toLocaleString()).toFixed(2) + "%");
+
+          //append ticker items to ticker tape
+          tickerItemElem.append(tickerLogoElem);
+          tickerItemElem.append(tickerCryptTick);
+          tickerItemElem.append(tickerCryptPerf);
+
+          $("#ticker-tape").append(tickerItemElem);
+
+
           //create table row
           var tableRowElem = $("<tr>");
           //create table data elements
