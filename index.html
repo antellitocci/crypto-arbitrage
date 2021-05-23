@@ -72,6 +72,7 @@
         </div>
     </div>
     <!-- Start of favorites section -->
+    <div class="container">
     <div class="columns">
         <div class="card">
             <!-- <div class="card-image">
@@ -214,6 +215,7 @@
             </div>
           </div>
 
+        </div>
     </div>
     </div>
     <!-- End of favorites section -->
@@ -292,40 +294,53 @@
           </div>
     </div>
 
-    <table>
-        <tr>
-
-        </tr>
-        <tr>
-            <th> Name</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr>
-
-        </tr>
-        <tr>
-
-        </tr>
-        <tr>
-
-        </tr>
-        <tr>
-
-        </tr>
-        <tr>
-
-        </tr>
-        <tr>
-
-        </tr>
-    </table>
+    <div class="container">
+        <table class="table is-fullwidth" id="crypto-table">
+            <thead>
+                <tr style="font-size: 0.85em;">
+                  <th></th>
+                  <th>Coin</th>
+                  <th></th>
+                  <th><abbr title="Coin in base currency">Price/Base</abbr></th>
+                  <th><abbr title="Coin's cost in EUR converted to base currency">Price/EUR/Base</abbr></th>
+                  <th><abbr title="Coin's cost in GBP converted to base currency">Price/GBP/Base</abbr></th>
+                  <th><abbr title="Coin's cost in JPY converted to base currency">Price/JPY/Base</abbr></th>
+                  <th><abbr title="Coin's cost in KRW converted to base currency">Price/KRW/Base</abbr></th>
+                  <th>1-Day</th>
+                  <th>7-Day</th>
+                  <th>Chart</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><i class="far fa-crown"></i></td>
+                    <td><img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579" style="height: auto; width: 25px; float: left;"><span style="padding-left: 25px;"> <b>Bitcoin</b></span></td>
+                    <td>BTC</td>
+                    <td>$37,940.60</td>
+                    <td>+ $50.00</td>
+                    <td>- $150.00</td>
+                    <td>+ $4.00</td>
+                    <td>+ $0.05</td>
+                    <td style="color: red">-0.60%</td>
+                    <td style="color: red">-18.40%</td>
+                      <td>[chart]</td>
+                </tr>
+                <tr>
+                    <td><i class="far fa-crown"></i></td>
+                    <td id="eth-img"><img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579" style="height: auto; width: 25px; float: left;"><span style="padding-left: 25px;"> <b>Bitcoin</b></span></td>
+                    <td id="eth-ticker">BTC</td>
+                    <td id="eth-base">$37,940.60</td>
+                    <td id="eth-eur">+ $50.00</td>
+                    <td id="eth-gbp">- $150.00</td>
+                    <td id="eth-jpy">+ $4.00</td>
+                    <td id="eth-krw">+ $0.05</td>
+                    <td id="eth-1d" style="color: red">-0.60%</td>
+                    <td id="eth-7d" style="color: red">-18.40%</td>
+                    <td id="eth-chart">[chart]</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <footer class="navbar is-fixed-bottom" id="footer">
         <p>Cryptocurrency data provided by <span><a href="https://www.coingecko.com/en/api" target="_blank">CoinGecko API</a></span></p>
     </footer>
