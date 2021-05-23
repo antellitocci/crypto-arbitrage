@@ -37,6 +37,7 @@ function getCryptocurrenciesTable(){
           var tableRowElem = $("<tr>");
           //create table data elements
           var tableFavElem = $("<td>").html('<i class="far fa-crown"></i>');
+          var tableIDElem = $("<td>").html("<b>"+ (i+1) + "</b>");
           var tableCoinElem = $("<td>").html('<img src="' + cryptoImg +'" style="height: auto; width: 25px; float: left;"><span style="padding-left: 25px; font-size: .95em;"> <b>' + cryptoName +'</b></span>');
           var tableCoinTicker = $("<td>").html(cryptoTicker.toUpperCase());
           var tableCoinPriceBase = $("<td>").html("$" + parseFloat(cryptoCurrentPrice.toLocaleString()).toFixed(2));
@@ -52,6 +53,7 @@ function getCryptocurrenciesTable(){
 
           //append elements in the correct order
           tableRowElem.append(tableFavElem);
+          tableRowElem.append(tableIDElem);
           tableRowElem.append(tableCoinElem);
           tableRowElem.append(tableCoinTicker);
           tableRowElem.append(tableCoinPriceBase);
