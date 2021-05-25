@@ -67,6 +67,9 @@ box-sizing: content-box;
 
 }
 
+.navbar-menu{
+  background-color: #b8b8b5;
+}
 
 html{
     background-color: #b8b8b5;

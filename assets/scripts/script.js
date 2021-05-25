@@ -55,7 +55,8 @@ function getCryptocurrenciesTable(){
           var tableIDElem = $("<td>").html("<b>"+ (i+1) + "</b>");
           var tableCoinElem = $("<td>").html('<img src="' + cryptoImg +'" style="height: auto; width: 25px; float: left;"><span style="padding-left: 25px; font-size: .95em;"> <b>' + cryptoName +'</b></span>');
           var tableCoinTicker = $("<td>").html(cryptoTicker.toUpperCase());
-          var tableCoinPriceBase = $("<td>").html("$" + parseFloat(cryptoCurrentPrice.toLocaleString()).toFixed(2));
+          var tableCoinPriceBase = $("<td>").html("$" + cryptoCurrentPrice.toLocaleString());
+          console.log(tableCoinPriceBase);
           var tableCoinPriceEUR = $("<td>").html(cryptoEURPrice);
           var tableCoinPriceGBP = $("<td>").html(cryptoGBPPrice);
           var tableCoinPriceJPY = $("<td>").html(cryptoJPYPrice);
