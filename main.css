@@ -68,3 +68,19 @@ nav a::before {
 nav a:hover::before {
     width: 100%;
 }
+.navbar-menu {
+    background-color: #137DC5;
+    height: 8em;
+}
+#logo {
+    background-image: url(assets/images/CryptoLogo.png);
+    background-size: cover;
+    height: auto;
+    width: 200px;
+}
+.figure, .card-content {
+    padding: 5px;
+}
+.card-height {
+    height: 120px !important;
+}
