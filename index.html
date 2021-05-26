@@ -17,23 +17,21 @@
 
 <body>
 <!-- Start of navagation bar -->
-    <div class="block">
+    <!-- <div class="block"> -->
         <div class="navbar-menu">
             <div class="navbar-start">
               <!-- navbar items -->
               <a class="navbar-item" id="logo">
                 </a>
-              
-            
             </div> 
-            <div class="navbar-end">
+          <div class="navbar-end">
             <!-- navbar items -->
           
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link is-arrowless">
                     <i class="fas fa-bars"></i>
                     </a>
-                    <div class="navbar-dropdown is-right">
+                    <div class="navbar-dropdown is-right" id="dropdown">
                     <a class="navbar-item">
                         Home
                     </a>
@@ -41,18 +39,15 @@
                         Exchange Calculator
                     </a>
                    
-                    <hr class="navbar-divider">
-                    <!-- <div class="navbar-item">
-                        Crypto Abritrage
-                    </div> -->
+                    <!-- <hr class="navbar-divider"> -->
                 </div>
             </div>
         </div>
     </div>
-    </div>
+    <!-- </div> -->
     <!-- End of navagation bar -->
      <!--Start Ticker-->
-    <div class="ticker-container">
+    <!-- thats -->
         <div class="ticker">
             <div class="ticker-item">
                 <span class="ti-logo"><img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579" style="height: 15px; width: 15px;"/></span>
@@ -67,23 +62,6 @@
         </div>
     </div>
     <!-- Start of favorites section -->
-    <!-- <div class="columns id="topFiveCoins" >
-      <div class="column">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-              </figure>
-            </div>
-            <div class="media-content">
-              <p class="title is-4"></p>
-              <p class="subtitle is-6"></p>
-            </div>
-          </div>
-        </div>  
-      </div>-->
-      
           <div class="container">
             <div class="columns" id="topFiveCoins">
             </div>
@@ -91,11 +69,11 @@
     <!-- End of favorites section -->
 
     <!--User Preferences-->
-    <div class="container">
+    <div class="container" id="currency">
         <span>Select Base Currency: </span>
         <div class="dropdown">
             <div class="dropdown-trigger">
-                <button class="button is-small" style="background-color: black; color: lightgray; font-weight: bold; border: 1px solid black;" aria-haspopup="true" aria-controls="dropdown-menu3">
+                <button class="button is-small" style="background-color: black; color: #34468e; font-weight: bold; border: 1px solid black;" aria-haspopup="true" aria-controls="dropdown-menu3">
                     <span>USD <i class="fas fa-caret-down"></i></span>
                 </button>
             </div>
