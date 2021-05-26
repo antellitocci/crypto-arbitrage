@@ -54,8 +54,8 @@ box-sizing: content-box;
         animation-timing-function: linear;
 -webkit-animation-name: ticker;
         animation-name: ticker;
--webkit-animation-duration: 300s;
-        animation-duration: 300s;
+-webkit-animation-duration: 500s;
+        animation-duration: 500s;
 }
 
 .ticker-item {
