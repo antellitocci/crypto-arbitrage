@@ -4,11 +4,14 @@ dropdown.addEventListener('click', function(event) {
   dropdown.classList.toggle('is-active');
 });
 
+//create a variable to hold a user's base fiat currency selection
+var fiatSelection = JSON.parse(localStorage.getItem("baseFiat")) || "USD";
 
-function getCryptocurrenciesTable(){
+
+function getCryptocurrenciesTable(baseFiat, euro, gbp, yen, won){
 
   //get api URL (will need to adjust currency=X to match base selected by user)
-  var apiURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=150&page=1&sparkline=true&price_change_percentage=24h%2C7d%2C30d%2C1y"
+  var apiURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=" + baseFiat + "&order=market_cap_desc&per_page=150&page=1&sparkline=true&price_change_percentage=24h%2C7d%2C30d%2C1y"
 
   //make request to URL
   fetch(apiURL).then(function(response){
@@ -24,10 +27,10 @@ function getCryptocurrenciesTable(){
           var cryptoTicker = data[i].symbol;
           var cryptoCurrentPrice = data[i].current_price;
           console.log(cryptoCurrentPrice.toLocaleString());
-          var cryptoEURPrice = "+ $150.00";
-          var cryptoGBPPrice = "+ $20.04";
-          var cryptoJPYPrice = "+ $10.25";
-          var cryptoKRMPrice = "+ $0.04";
+          var cryptoEURPrice = euro;
+          var cryptoGBPPrice = gbp;
+          var cryptoJPYPrice = yen;
+          var cryptoKRMPrice = won;
           var crypto1D = data[i].price_change_percentage_24h_in_currency;
           var crypto7D = data[i].price_change_percentage_7d_in_currency;
           var crypto30D = data[i].price_change_percentage_30d_in_currency;
@@ -100,4 +103,71 @@ function getCryptocurrenciesTable(){
 
 };
 
-getCryptocurrenciesTable();
+function getCurrencyExchangeData(baseFiat){
+
+  apiURL = "https://v6.exchangerate-api.com/v6/d39488d42ff5b6cc753183cf/latest/" + baseFiat;
+
+  fetch(apiURL).then(function(response){
+    console.log(response);
+    if(response.ok){
+      response.json().then(function(data){
+        console.log(data);
+        //search for table exchange rates
+        var eurConversion = data.conversion_rates["EUR"];
+        var gbpConversion = data.conversion_rates["GBP"];
+        var jpyConversion = data.conversion_rates["JPY"];
+        var krwConversion = data.conversion_rates["KRW"];
+        console.log(eurConversion);
+        console.log(gbpConversion);
+        console.log(jpyConversion);
+        console.log(krwConversion);
+
+        getCurrencyExchangeData(baseFiat, eurConversion, gbpConversion, jpyConversion, krwConversion);
+        
+      });
+    }
+  });
+};
+
+function performTableFiatConversions(base, euro, gbp, yen, won){
+
+  var currencyArray = [base, "eur", "gbp", "jpy", "krw"];
+  console.log(currencyArray);
+
+  for (i = 0; i < currencyArray.length; i++){
+  //get api URL (will need to adjust currency=X to match base selected by user)
+  var apiURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=" + currencyArray[i].value; + "&order=market_cap_desc&per_page=150&page=1&sparkline=true&price_change_percentage=24h%2C7d%2C30d%2C1y"
+
+  //make request to URL
+  fetch(apiURL).then(function(response){
+    console.log(response);
+    if(response.ok){
+      response.json().then(function(data){
+        console.log(data);
+  }
+
+
+
+
+};
+
+performTableFiatConversions();
+
+//Get user fiat selection
+$("#dropdown-menu").on("click", function(event){
+  console.log("fired");
+  fiatSelection = event.target.getAttribute("data-fiat");
+  
+  if(fiatSelection != null)
+  {
+    console.log(fiatSelection);
+    $("#base-fiat-select").text("");
+    $("#base-fiat-select").html(fiatSelection.toUpperCase() + ' <i class="fas fa-caret-down"></i>');
+    //pass fiat selection to the currency exchange api
+    getCurrencyExchangeData(fiatSelection);
+    //save fiat selection to local storage for page reload
+  }
+
+});
+
+getCryptocurrenciesTable(fiatSelection);

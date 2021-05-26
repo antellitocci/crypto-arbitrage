@@ -84,36 +84,36 @@
         <div class="dropdown">
             <div class="dropdown-trigger">
                 <button class="button is-small" style="background-color: #0f5f96; color: white; font-weight: bold; border: 1px solid black;" aria-haspopup="true" aria-controls="dropdown-menu3">
-                    <span>USD <i class="fas fa-caret-down"></i></span>
+                    <span id="base-fiat-select">USD <i class="fas fa-caret-down"></i></span>
                 </button>
             </div>
-            <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+            <div class="dropdown-menu" role="menu">
               <div class="dropdown-content" style="background-color: lightgray;">
-                  <span style="text-align: center;"><h4 style="font-weight: bolder;">Popular Currencies</h4></span>
-                <div class="columns is-multiline menu-cols">
-                    <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.75);">USD</span><span> US Dollar</span>
+                  <span style="text-align: center;"><h4 style="font-weight: bolder; color: rgba(0,0,0,0.75);">Popular Currencies</h4></span>
+                <div class="columns is-multiline menu-cols" id="dropdown-menu" >
+                    <a class="dropdown-item column is-one-quarter fiat-usd" data-fiat="usd">
+                        US Dollar
                     </a>
-                    <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.75);">EUR </span><span> Euro</span>
+                    <a class="dropdown-item column is-one-quarter fiat-euro" data-fiat="eur">
+                        Euro
                     </a>
-                    <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.75);">CNY </span><span> Chinese Yuan</span>
+                    <a class="dropdown-item column is-one-quarter fiat-cny" data-fiat="cny">
+                        Chinese Yuan
                     </a>
-                    <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.75);">KRW </span><span> South Korean Won</span>
+                    <a class="dropdown-item column is-one-quarter fiat-krw" data-fiat="krw">
+                        South Korean Won
                     </a>
-                    <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.75);">JPY </span><span> Japanese Yen</span>
+                    <a class="dropdown-item column is-one-quarter fiat-jpy" data-fiat="jpy">
+                        Japanese Yen
                     </a>
-                    <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.75);">CAD </span><span> Canadian Dollar</span>
+                    <a class="dropdown-item column is-one-quarter fiat-cad" data-fiat="cad">
+                        Canadian Dollar
                     </a>
-                    <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.75);">GBP </span><span> British Pound Sterling</span>
+                    <a class="dropdown-item column is-one-quarter fiat-gbp" data-fiat="gbp">
+                        British Pound Sterling
                     </a>
-                    <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.75);">RUB </span><span> Russian Ruble</span>
+                    <a class="dropdown-item column is-one-quarter fiat-rub" data-fiat="rub">
+                        Russian Ruble
                     </a>
                 </div>
               </div>
@@ -129,7 +129,7 @@
                     <th></th>
                     <th style="color: white;">#</th>
                     <th style="color: white;">Coin</th>
-                    <th></th>
+                    <th style="color: white;">Ticker</th>
                     <th style="color: white;"><abbr title="Coin in base currency">Price/Base</abbr></th>
                     <th style="color: white;"><abbr title="Coin's cost in EUR converted to base currency">Price/EUR/Base</abbr></th>
                     <th style="color: white;"><abbr title="Coin's cost in GBP converted to base currency">Price/GBP/Base</abbr></th>

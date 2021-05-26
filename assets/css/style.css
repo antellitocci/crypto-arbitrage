@@ -96,6 +96,55 @@ tbody tr:hover{
   margin: 20px auto !important;
 }
 
+.fiat-usd:before{
+  font-weight: bold; 
+  color: rgba(0,0,0,0.75);
+  content: "USD ";
+}
+
+.fiat-euro:before{
+  font-weight: bold; 
+  color: rgba(0,0,0,0.75);
+  content: "EUR ";
+}
+
+.fiat-cny:before{
+  font-weight: bold; 
+  color: rgba(0,0,0,0.75);
+  content: "CNY ";
+}
+
+.fiat-krw:before{
+  font-weight: bold; 
+  color: rgba(0,0,0,0.75);
+  content: "KRW ";
+}
+
+.fiat-jpy:before{
+  font-weight: bold; 
+  color: rgba(0,0,0,0.75);
+  content: "JPY ";
+}
+
+.fiat-cad:before{
+  font-weight: bold; 
+  color: rgba(0,0,0,0.75);
+  content: "CAD ";
+}
+
+.fiat-gbp:before{
+  font-weight: bold; 
+  color: rgba(0,0,0,0.75);
+  content: "GBP ";
+}
+
+.fiat-rub:before{
+  font-weight: bold; 
+  color: rgba(0,0,0,0.75);
+  content: "RUB ";
+}
+
+
 /*Data Tables Style Override*/
 .dataTables_wrapper, .dataTables_length, .dataTables_info, .dataTables_filter{
   color: white !important;
@@ -110,10 +159,6 @@ tbody tr:hover{
   color:white !important;
 }
 
-.dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
-  color: rgba(250,250,250,0.75) !important;
-}
-
 /*Data Tables Select Drop Down*/
 .dataTables_wrapper .dataTables_length select{
   background-color: rgba(199,199,191,0.5);
@@ -123,4 +168,8 @@ tbody tr:hover{
 .dataTables_wrapper .dataTables_filter input{
   background-color: rgba(199,199,191,0.5);
   border: none;
+  border-radius: 1px;
+}
+input{
+  font-family: 'Work Sans', sans-serif;
 }
