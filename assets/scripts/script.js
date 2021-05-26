@@ -4,10 +4,11 @@ dropdown.addEventListener('click', function(event) {
   dropdown.classList.toggle('is-active');
 });
 
+
 function getCryptocurrenciesTable(){
 
   //get api URL (will need to adjust currency=X to match base selected by user)
-  var apiURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=24h%2C7d%2C30d%2C1y"
+  var apiURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=150&page=1&sparkline=true&price_change_percentage=24h%2C7d%2C30d%2C1y"
 
   //make request to URL
   fetch(apiURL).then(function(response){
@@ -84,9 +85,10 @@ function getCryptocurrenciesTable(){
           //tableRowElem.append(tableCoinChart);
 
           //get reference to crypto table section and append row
-          $("#crypto-table").append(tableRowElem);
-
+          $("#crypto-table-rows").append(tableRowElem);
         }
+        //Create sortable, searchable table using data table framework after the table has been created on the page
+        $("#crypto-table").DataTable();
 
       });
     }

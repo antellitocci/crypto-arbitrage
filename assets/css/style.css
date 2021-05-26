@@ -54,8 +54,8 @@ box-sizing: content-box;
         animation-timing-function: linear;
 -webkit-animation-name: ticker;
         animation-name: ticker;
--webkit-animation-duration: 200s;
-        animation-duration: 200s;
+-webkit-animation-duration: 300s;
+        animation-duration: 300s;
 }
 
 .ticker-item {
@@ -94,4 +94,33 @@ tbody tr:hover{
 
 .user-pref{
   margin: 20px auto !important;
+}
+
+/*Data Tables Style Override*/
+.dataTables_wrapper, .dataTables_length, .dataTables_info, .dataTables_filter{
+  color: white !important;
+  margin-bottom: 5px !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+  color:white !important;
+}
+
+.dataTables_wrapper .dataTables_paginate{
+  color:white !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+  color: rgba(250,250,250,0.75) !important;
+}
+
+/*Data Tables Select Drop Down*/
+.dataTables_wrapper .dataTables_length select{
+  background-color: rgba(199,199,191,0.5);
+  border: none;
+}
+/*Data Tables search input*/
+.dataTables_wrapper .dataTables_filter input{
+  background-color: rgba(199,199,191,0.5);
+  border: none;
 }

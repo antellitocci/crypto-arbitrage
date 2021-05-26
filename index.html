@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
     <!--Import FontAwesome Icons-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-iKbFRxucmOHIcpWdX9NTZ5WETOPm0Goy0WmfyNcl52qSYtc2Buk0NCe6jU1sWWNB" crossorigin="anonymous">
+    <!--Import Data Tables-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
     <!--Import custom stylesheets-->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="./main.css">
@@ -121,31 +123,33 @@
 
     <div class="container">
         <div class="table-container">
-        <table class="table is-fullwidth">
-            <thead>
-                <tr style="font-size: 0.85em; background-color: #0f5f96;">
-                  <th></th>
-                  <th style="color: white;">#</th>
-                  <th style="color: white;">Coin</th>
-                  <th></th>
-                  <th style="color: white;"><abbr title="Coin in base currency">Price/Base</abbr></th>
-                  <th style="color: white;"><abbr title="Coin's cost in EUR converted to base currency">Price/EUR/Base</abbr></th>
-                  <th style="color: white;"><abbr title="Coin's cost in GBP converted to base currency">Price/GBP/Base</abbr></th>
-                  <th style="color: white;"><abbr title="Coin's cost in JPY converted to base currency">Price/JPY/Base</abbr></th>
-                  <th style="color: white;"><abbr title="Coin's cost in KRW converted to base currency">Price/KRW/Base</abbr></th>
-                  <th style="color: white;">1-Day</th>
-                  <th style="color: white;">7-Day</th>
-                </tr>
-            </thead>
-            <tbody id="crypto-table">
-            </tbody>
-        </table>
-    </div>
+            <table class="table is-fullwidth" id="crypto-table">
+                <thead>
+                    <tr style="font-size: 0.85em; background-color: #0f5f96;">
+                    <th></th>
+                    <th style="color: white;">#</th>
+                    <th style="color: white;">Coin</th>
+                    <th></th>
+                    <th style="color: white;"><abbr title="Coin in base currency">Price/Base</abbr></th>
+                    <th style="color: white;"><abbr title="Coin's cost in EUR converted to base currency">Price/EUR/Base</abbr></th>
+                    <th style="color: white;"><abbr title="Coin's cost in GBP converted to base currency">Price/GBP/Base</abbr></th>
+                    <th style="color: white;"><abbr title="Coin's cost in JPY converted to base currency">Price/JPY/Base</abbr></th>
+                    <th style="color: white;"><abbr title="Coin's cost in KRW converted to base currency">Price/KRW/Base</abbr></th>
+                    <th style="color: white;">1-Day</th>
+                    <th style="color: white;">7-Day</th>
+                    </tr>
+                </thead>
+                <tbody id="crypto-table-rows">
+                </tbody>
+            </table>
+        </div>
     </div>
 
 
     <!--Import JQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--Import Data Tables JS-->
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>   
     <!--Link to Personal Script-->
     <script src="assets/scripts/script.js"></script>
     <script src="./js/favorites.js"></script>   
