@@ -63,7 +63,7 @@ box-sizing: content-box;
     display: inline-block;
     padding: 0 2rem;
     font-size: 1.2rem;
-    color: #E6E6E3;   
+    color: #34468e;
 
 }
 
@@ -172,4 +172,15 @@ tbody tr:hover{
 }
 input{
   font-family: 'Work Sans', sans-serif;
+}
+
+/**/
+footer .container{
+  margin-top: 20px !important;
+}
+
+.footer-style{
+  color: white !important;
+  background-color: black !important;
+  margin-top: 20px !important;
 }

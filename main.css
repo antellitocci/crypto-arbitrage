@@ -99,7 +99,7 @@ nav a:hover::after {
     height: 120px !important;
     background-color: #C7C7BF;
 }
-.content {
+.content{
     background-color: #C7C7BF;
     color: #34468e;
     text-align: center;
@@ -115,11 +115,13 @@ nav a:hover::after {
     background-color: #C7C7BF;
 }
 #currency {
+    font-weight: bolder;
+    font-size: 1.5em;
     color: #34468e;
     align-items: baseline;
 }
 .ticker {
-    background-color: #C7C7BF;
+    background-color: rgb(199,199,191,0.35);
 }
 .ti-tick{
     color: #34468e;
