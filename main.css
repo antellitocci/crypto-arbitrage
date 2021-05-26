@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
 body {
     margin: 0;
-    background: #222;
+    background: #292929;
     font-family: 'Work Sans', sans-serif;
     color: white;
 }
-
+/* 
 .container {
     width: 80%;
     margin: 0 auto;
@@ -58,7 +58,7 @@ nav a::before {
     content: '';
     display: block;
     height: 5px;
-    background-color: #444;
+    background-color: #292929;
     position: absolute;
     top: 0;
     width: 0%;
@@ -67,11 +67,21 @@ nav a::before {
 
 nav a:hover::before {
     width: 100%;
+    background-color: #292929;
 }
+nav a:hover::after {
+    background-color: #C7C7BF;
+    color: #292929;
+} */
 .navbar-menu {
-    background-color: #137DC5;
+    /* background-image: linear-gradient(#1a1a1a, #0f5f96, #137DC5 ); */
+    background-image: linear-gradient(#292929, #34468e, #3683c0, #34468e, #292929);
     height: 8em;
 }
+/* .block {
+    margin: 0;
+    padding-bottom: 0;
+} */
 #logo {
     background-image: url(assets/images/CryptoLogo.png);
     background-size: cover;
@@ -80,7 +90,41 @@ nav a:hover::before {
 }
 .figure, .card-content {
     padding: 5px;
+    background-color: #C7C7BF;
+}
+.container {
+    margin-top: 100px;
 }
 .card-height {
     height: 120px !important;
+    background-color: #C7C7BF;
+}
+.content {
+    background-color: #C7C7BF;
+    color: #34468e;
+    text-align: center;
+    vertical-align: 5em;
+}
+.media {
+    align-items: center;
+}
+.title, .subtitle {
+    text-align: center;
+}
+#dropdown {
+    background-color: #C7C7BF;
+}
+#currency {
+    color: #34468e;
+    align-items: baseline;
+}
+.ticker {
+    background-color: #C7C7BF;
+}
+.ti-tick{
+    color: #34468e;
+}
+
+.ti-perf {
+    color: #34468e;
 }

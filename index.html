@@ -28,28 +28,45 @@
             <img src="https://fontmeme.com/permalink/210522/fcd30b80c8422675cbb5f69b9a6c8ae8.png" id="img_crypto" width="200" height="250" alt="">
           </a>
 
+    <!-- <div class="block"> -->
+        <div class="navbar-menu">
+            <div class="navbar-start">
+              <!-- navbar items -->
+              <a class="navbar-item" id="logo">
+                </a>
+            </div> 
+          <div class="navbar-end">
+
+
             </div> 
             <h1 class="navbar-item center">
               CRYPTO ARBITRAGE
           </h1>
             <div class="navbar-end">
+
             <!-- navbar items -->
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link is-arrowless">
                     <i class="fas fa-bars"></i>
                     </a>
-                    <div class="navbar-dropdown is-right">
+                    <div class="navbar-dropdown is-right" id="dropdown">
                     <a class="navbar-item">
                         Home
                     </a>
                     <a class="navbar-item">
                         Exchange Calculator
                     </a>
+
+                   
+                    <!-- <hr class="navbar-divider"> -->
+
+
                 </div>
             </div>
         </div>
         </div>
     </div>
+
     <!-- End of navagation bar -->
      <!--Start Ticker-->
     <div class="container">
@@ -58,6 +75,11 @@
             </div>
         </div>
     </div>
+    <!-- Start of favorites section -->
+          <div class="container">
+            <div class="columns" id="topFiveCoins">
+            </div>
+          </div>
 
     <!--Start Intro Content-->
     <div class="container" style="margin: 20px auto;">
@@ -76,15 +98,16 @@
       </div>
     </div>
 
+
     <!-- End of favorites section -->
 
     <!--User Preferences-->
-    <div class="container user-pref">
-        <span style="color:white;">Select Base Currency: </span>
+    <div class="container" id="currency">
+        <span>Select Base Currency: </span>
         <div class="dropdown">
             <div class="dropdown-trigger">
-                <button class="button is-small" style="background-color: #0f5f96; color: white; font-weight: bold; border: 1px solid black;" aria-haspopup="true" aria-controls="dropdown-menu3">
-                    <span id="base-fiat-select">USD <i class="fas fa-caret-down"></i></span>
+                <button class="button is-small" style="background-color: black; color: #34468e; font-weight: bold; border: 1px solid black;" aria-haspopup="true" aria-controls="dropdown-menu3">
+                    <span>USD <i class="fas fa-caret-down"></i></span>
                 </button>
             </div>
             <div class="dropdown-menu" role="menu">
