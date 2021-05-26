@@ -63,7 +63,7 @@ function getCryptocurrenciesTable(baseFiat){
           var tableCoinElem = $("<td>").html('<img src="' + cryptoImg +'" style="height: auto; width: 25px; float: left;"><span style="padding-left: 25px; font-size: .95em;"> <b>' + cryptoName +'</b></span>');
           var tableCoinTicker = $("<td>").html(cryptoTicker.toUpperCase());
           var tableCoinPriceBase = $("<td>").html("$" + cryptoCurrentPrice.toLocaleString());
-          var tableCoinPriceEUR = $("<td>").html(cryptoEURPrice);
+          var tableCoinPriceEUR = $("<td>").attr("data-eur-id", i).addClass("table-price-item").html(cryptoEURPrice);
           var tableCoinPriceGBP = $("<td>").html(cryptoGBPPrice);
           var tableCoinPriceJPY = $("<td>").html(cryptoJPYPrice);
           var tableCoinPriceKRW = $("<td>").html(cryptoKRMPrice);
@@ -91,10 +91,12 @@ function getCryptocurrenciesTable(baseFiat){
 
           //get reference to crypto table section and append row
           $("#crypto-table-rows").append(tableRowElem);
+          getCryptocurrencyPricesInFiat();
         }
         //Create sortable, searchable table using data table framework after the table has been created on the page
         dynamicTableElem = $("#crypto-table").DataTable();
       });
+
     }
     else
     {
@@ -129,18 +131,22 @@ function getCurrencyExchangeData(baseFiat){
 
 
 function getCryptocurrencyPricesInFiat(){
-  var currencyArray = ["eur", "gbp", "jpy", "krw"];
+  var currencyArray = ["eur"];
 
   for (i = 0; i < currencyArray.length; i++){
     //get api URL (will need to adjust currency=X to match base selected by user)
     var apiURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=" + currencyArray[i] + "&order=market_cap_desc&per_page=150&page=1&sparkline=true&price_change_percentage=24h%2C7d%2C30d%2C1y"
     
+    var changeSlot = currencyArray[i];
+
     fetch(apiURL).then(function(response){
       console.log(response);
       if(response.ok){
         response.json().then(function(data){
           console.log(data);
             for(x = 0; x < data.length; x ++){
+              console.log(data[x].current_price);
+              updatePriceTable(changeSlot, data[x].current_price);
             }
         });
       }
@@ -150,13 +156,20 @@ function getCryptocurrencyPricesInFiat(){
   // performTableFiatConversions(eurCryptoPrice, gbpCryptoPrice, jpyCryptoPrice, krwCryptoPrice);
 };
 
+function updatePriceTable(identifier, price){
+  console.log(identifier);
+  console.log(price);
+
+    var updatePriceTableItem = $(".table-price-item[data-" + identifier + "-id=" + i + "]");
+    console.log(updatePriceTableItem);
+    updatePriceTableItem.html(price);
+}
+
 
 function performTableFiatConversions(base, euro, gbp, yen, won){
 
 
 };
-
-getCryptocurrencyPricesInFiat();
 
 //Get user fiat selection
 $("#dropdown-menu").on("click", function(event){
