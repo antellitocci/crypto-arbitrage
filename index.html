@@ -17,6 +17,14 @@
 
 <body>
 <!-- Start of navagation bar -->
+<div class="block" syle="margin-bottom: 0;">
+    <!-- <nav class="navbar is-fixed-top"> -->
+    <div class="navbar-menu" style="height: 5em; margin-bottom: 0;">
+        <div class="navbar-start">
+          <!-- navbar items -->
+          <a class="navbar-item">
+            <img src="https://fontmeme.com/permalink/210522/fcd30b80c8422675cbb5f69b9a6c8ae8.png" id="img_crypto" width="200" height="250" alt="">
+          </a>
 
             </div> 
             <h1 class="navbar-item center">
@@ -40,13 +48,27 @@
         </div>
         </div>
     </div>
-    </div>
     <!-- End of navagation bar -->
      <!--Start Ticker-->
-    <div class="ticker-container">
-        <div class="ticker" id="ticker-tape">
+    <div class="container">
+        <div class="ticker-container">
+            <div class="ticker" id="ticker-tape">
+            </div>
         </div>
     </div>
+
+    <!--Start Intro Content-->
+    <div class="container" style="margin: 20px auto;">
+        <p style="color: white;"><i>Crypto Arbitrage</i> is an application designed to identify currency exchange rate arbitrage
+            <abbr title="Arbitrage: The buying and selling of securities, currency, or commodities in different markets or derivative forms in order to take advantage of differing prices for the same asset."><i class="fas fa-info-circle" style="font-size: 0.75em;"></i></abbr>
+            opportunities in the cryptocurrency market. While the major
+            coins are likely priced efficiently, we anticipate there will be a select group of smaller, less well-known coins that exhibit pricing discrepancies due to less efficient market traits.
+        </p>  
+    </div>
+
+
+
+    <!--Start Favorites Section-->
     <div class="container">
       <div class="columns" id="topFiveCoins">
       </div>
@@ -55,11 +77,11 @@
     <!-- End of favorites section -->
 
     <!--User Preferences-->
-    <div class="container">
-        <span>Select Base Currency: </span>
+    <div class="container user-pref">
+        <span style="color:white;">Select Base Currency: </span>
         <div class="dropdown">
             <div class="dropdown-trigger">
-                <button class="button is-small" style="background-color: black; color: lightgray; font-weight: bold; border: 1px solid black;" aria-haspopup="true" aria-controls="dropdown-menu3">
+                <button class="button is-small" style="background-color: #0f5f96; color: white; font-weight: bold; border: 1px solid black;" aria-haspopup="true" aria-controls="dropdown-menu3">
                     <span>USD <i class="fas fa-caret-down"></i></span>
                 </button>
             </div>
@@ -68,59 +90,28 @@
                   <span style="text-align: center;"><h4 style="font-weight: bolder;">Popular Currencies</h4></span>
                 <div class="columns is-multiline menu-cols">
                     <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">USD |</span><span> US Dollar</span>
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.75);">USD</span><span> US Dollar</span>
                     </a>
                     <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">EUR </span><span> Euro</span>
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.75);">EUR </span><span> Euro</span>
                     </a>
                     <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">CNY </span><span> Chinese Yuan</span>
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.75);">CNY </span><span> Chinese Yuan</span>
                     </a>
                     <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">KRW </span><span> South Korean Won</span>
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.75);">KRW </span><span> South Korean Won</span>
                     </a>
                     <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">JPY </span><span> Japanese Yen</span>
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.75);">JPY </span><span> Japanese Yen</span>
                     </a>
                     <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">CAD </span><span> Canadian Dollar</span>
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.75);">CAD </span><span> Canadian Dollar</span>
                     </a>
                     <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">GBP </span><span> British Pound Sterling</span>
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.75);">GBP </span><span> British Pound Sterling</span>
                     </a>
                     <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">RUB </span><span> Russian Ruble</span>
-                    </a>
-                </div>
-                <hr class="dropdown-divider"/>
-                <span style="text-align: center;"><h4 style="font-weight: bolder;">Fiat Currencies</h4></span>
-                <div class="columns is-multiline menu-cols">
-                    <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AED </span><span> UAE Dirham</span>
-                    </a>
-                    <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AFN </span><span> Afghan Afghani</span>
-                    </a>
-                    <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">ALL </span><span> Albanian Lek</span>
-                    </a>
-                    <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AMD </span><span> Armenian Dram</span>
-                    </a>
-                    <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">ANG </span><span> Netherlands Antillian Guilder</span>
-                    </a>
-                    <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AOA </span><span> Angolan Kwanza</span>
-                    </a>
-                    <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">ARS </span><span> Argentine Peso</span>
-                    </a>
-                    <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AUD </span><span> Australian Dollar</span>
-                    </a>
-                    <a class="dropdown-item column is-one-quarter">
-                        <span style="font-weight: bold; color: rgba(0,0,0,0.5);">AWG </span><span> Aruban Florin</span>
+                        <span style="font-weight: bold; color: rgba(0,0,0,0.75);">RUB </span><span> Russian Ruble</span>
                     </a>
                 </div>
               </div>
@@ -129,9 +120,10 @@
     </div>
 
     <div class="container">
+        <div class="table-container">
         <table class="table is-fullwidth">
             <thead>
-                <tr style="font-size: 0.85em; background-color: darkslateblue;">
+                <tr style="font-size: 0.85em; background-color: #0f5f96;">
                   <th></th>
                   <th style="color: white;">#</th>
                   <th style="color: white;">Coin</th>
@@ -143,12 +135,12 @@
                   <th style="color: white;"><abbr title="Coin's cost in KRW converted to base currency">Price/KRW/Base</abbr></th>
                   <th style="color: white;">1-Day</th>
                   <th style="color: white;">7-Day</th>
-                  <th style="color: white;">Chart</th>
                 </tr>
             </thead>
             <tbody id="crypto-table">
             </tbody>
         </table>
+    </div>
     </div>
 
 
@@ -159,7 +151,12 @@
     <script src="./js/favorites.js"></script>   
 </body>
 <footer class="footer">
-    <div class="content has-text-centered">
+    <div class="container">
+        <p style="color: white;"><i class="fas fa-exclamation-triangle" style="font-size: 1.5em; color: red;"></i> <span style="color: red; font-size: 1.5em;">DISCLAIMER: </span>The data illustrated here is by no means exhaustive, its accuracy cannot be guaranteed, and, most of all, it <b>should not</b> be used to make investment decisions. 
+            Investing is fraught with risk and we recommend you source your own consul; financial, legal, or otherwise, and conduct your own research before relying on the content presented herein.
+        </p>
+    </div>
+    <div class="content has-text-centered" style="margin-top: 20px;">
         <p>
             <b>Created by:</b> <a href="https://github.com/lmcmanaman" target="_blank">Leslie McManaman</a> | 
             <a href="https://github.com/ghazie754" target="_blank">Ghazi Ramadan</a> | 
