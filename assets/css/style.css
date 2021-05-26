@@ -1,0 +1,186 @@
+* { 
+    box-sizing: border-box; 
+}
+
+@-webkit-keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.ticker-container {
+  
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 2rem;
+  background-color: rgba(199,199,191,0.45);
+  border: 1px solid rgba(0,0,0,0.5);
+  box-sizing: content-box;
+  margin-bottom: 10px;
+}
+.ticker {
+
+display: inline-block;
+height: 2rem;
+line-height: 2rem;  
+white-space: nowrap;
+padding-left: 20%;
+box-sizing: content-box;
+
+-webkit-animation-iteration-count: infinite; 
+        animation-iteration-count: infinite;
+-webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+-webkit-animation-name: ticker;
+        animation-name: ticker;
+-webkit-animation-duration: 500s;
+        animation-duration: 500s;
+}
+
+.ticker-item {
+
+    display: inline-block;
+    padding: 0 2rem;
+    font-size: 1.2rem;
+    color: #34468e;
+
+}
+
+footer{
+    margin-top: 50px;
+    background-color: black !important;
+    color: #b8b8b5;
+}
+
+h1,h2,p {
+    padding: 0 5%;
+}
+
+.container{
+    margin-top: 50px;
+}
+
+.menu-cols{
+    width: 70rem;
+    padding: 10px;
+}
+
+tbody tr:hover{
+
+  cursor: crosshair;
+  background-color: rgba(199,199,191,0.45) !important;
+}
+
+.user-pref{
+  margin: 20px auto !important;
+}
+
+.fiat-usd:before{
+  font-weight: bold; 
+  color: rgba(0,0,0,0.75);
+  content: "USD ";
+}
+
+.fiat-euro:before{
+  font-weight: bold; 
+  color: rgba(0,0,0,0.75);
+  content: "EUR ";
+}
+
+.fiat-cny:before{
+  font-weight: bold; 
+  color: rgba(0,0,0,0.75);
+  content: "CNY ";
+}
+
+.fiat-krw:before{
+  font-weight: bold; 
+  color: rgba(0,0,0,0.75);
+  content: "KRW ";
+}
+
+.fiat-jpy:before{
+  font-weight: bold; 
+  color: rgba(0,0,0,0.75);
+  content: "JPY ";
+}
+
+.fiat-cad:before{
+  font-weight: bold; 
+  color: rgba(0,0,0,0.75);
+  content: "CAD ";
+}
+
+.fiat-gbp:before{
+  font-weight: bold; 
+  color: rgba(0,0,0,0.75);
+  content: "GBP ";
+}
+
+.fiat-rub:before{
+  font-weight: bold; 
+  color: rgba(0,0,0,0.75);
+  content: "RUB ";
+}
+
+
+/*Data Tables Style Override*/
+.dataTables_wrapper, .dataTables_length, .dataTables_info, .dataTables_filter{
+  color: white !important;
+  margin-bottom: 5px !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+  color:white !important;
+}
+
+.dataTables_wrapper .dataTables_paginate{
+  color:white !important;
+}
+
+/*Data Tables Select Drop Down*/
+.dataTables_wrapper .dataTables_length select{
+  background-color: rgba(199,199,191,0.5);
+  border: none;
+}
+/*Data Tables search input*/
+.dataTables_wrapper .dataTables_filter input{
+  background-color: rgba(199,199,191,0.5);
+  border: none;
+  border-radius: 1px;
+}
+input{
+  font-family: 'Work Sans', sans-serif;
+}
+
+/**/
+footer .container{
+  margin-top: 20px !important;
+}
+
+.footer-style{
+  color: white !important;
+  background-color: black !important;
+  margin-top: 20px !important;
+}
