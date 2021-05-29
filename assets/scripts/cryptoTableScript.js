@@ -12,10 +12,25 @@ var fiatSelection = JSON.parse(localStorage.getItem("baseFiat")) || "USD";
 var cryptoListArr = [];
 var cryptoInfoArr = [];
 var exchangeRateArr = [];
+//profit data
+//table info
+var dynamicDataTable;
 
-function getCryptocurrencyList(){
+function getCryptocurrencyList(baseFiat){
+    
+    cryptoListArr = [];
+    cryptoInfoArr = [];
+    exchangeRateArr = [];
+
+    if(dynamicDataTable !== undefined)
+    {
+      dynamicDataTable.destroy();
+    }
+    //clear any html out so it doesn't duplicate rows
+    $("#crypto-table-rows").empty();
+    
     //get api URL (will need to adjust currency=X to match base selected by user)
-    var apiURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false"
+    var apiURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=" + baseFiat + "&order=market_cap_desc&per_page=50&page=1&sparkline=false"
 
     fetch(apiURL).then(function(response){
         if(response.ok){
@@ -52,7 +67,13 @@ async function getCryptocurrencyData(){
                         jpyPrice: data.market_data.current_price["jpy"],
                         cadPrice: data.market_data.current_price["cad"],
                         gbpPrice: data.market_data.current_price["gbp"],
-                        rubPrice: data.market_data.current_price["rub"]
+                        rubPrice: data.market_data.current_price["rub"],
+                        one_day_change: data.market_data.price_change_percentage_24h,
+                        week_change: data.market_data.price_change_percentage_7d,
+                        eurProfit: "",
+                        gbpProfit: "",
+                        jpyProfit: "",
+                        krwProfit: ""
                     });
                 });
                 console.log(cryptoInfoArr);
@@ -66,11 +87,11 @@ async function getCryptocurrencyData(){
     getFiatExchangeInfo(fiatSelection);
 };
 
-async function getFiatExchangeInfo(baseFiat){
+function getFiatExchangeInfo(baseFiat){
 
     var apiURL = "https://v6.exchangerate-api.com/v6/d39488d42ff5b6cc753183cf/latest/" + baseFiat;
 
-    await fetch(apiURL).then(function(response){
+    fetch(apiURL).then(function(response){
         if(response.ok){
           response.json().then(function(data){
             console.log(data);
@@ -96,12 +117,87 @@ async function getFiatExchangeInfo(baseFiat){
 function performFiatCryptoConversions(){
 
     for (var i =0; i < cryptoInfoArr.length; i ++){
+        var baseIndexVal = fiatSelection.toLowerCase() + "Price"
+        var basePrice = cryptoInfoArr[i][baseIndexVal];
+
         var priceToEur = cryptoInfoArr[i].eurPrice;
-        var convertedEurToBase = (parseFloat(priceToEur, 5)) / (parseFloat(exchangeRateArr[1], 5));
-        console.log(priceToEur);
-        console.log(convertedEurToBase);
+        var convertedEurToBase = (parseFloat(priceToEur)) / (parseFloat(exchangeRateArr[1]));
+        var potentialProfitEur = convertedEurToBase - basePrice;
+        cryptoInfoArr[i]["eurProfit"] = parseFloat(potentialProfitEur).toFixed(5);
+
+        var priceToGBP = cryptoInfoArr[i].gbpPrice;
+        var convertedGBPToBase = (parseFloat(priceToGBP)) / (parseFloat(exchangeRateArr[6]));
+        var potentialProfitGBP = convertedGBPToBase - basePrice;
+        cryptoInfoArr[i]["gbpProfit"] = parseFloat(potentialProfitGBP).toFixed(5);
+
+        var priceToJPY = cryptoInfoArr[i].jpyPrice;
+        var convertedJPYToBase = (parseFloat(priceToJPY)) / (parseFloat(exchangeRateArr[4]));
+        var potentialProfitJPY = convertedJPYToBase - basePrice;
+        cryptoInfoArr[i]["jpyProfit"] = parseFloat(potentialProfitJPY).toFixed(5);
+
+        var priceToKRW = cryptoInfoArr[i].krwPrice;
+        var convertedKRWToBase = (parseFloat(priceToKRW)) / (parseFloat(exchangeRateArr[3]));
+        var potentialProfitKRW = convertedKRWToBase - basePrice;
+        cryptoInfoArr[i]["krwProfit"] = parseFloat(potentialProfitKRW).toFixed(5);
+
+        //use regex to add 
+        var bpString = basePrice.toString().split(".");
+        bpString[0] = bpString[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        basePrice = bpString.join(".");
+
+
+        buildTableData(i, basePrice);
     }
-}
+    dynamicDataTable = $("#crypto-table").DataTable();
+
+};
+
+function buildTableData(i, baseFiatPrice){
+    console.log("did it.");
+    console.log(cryptoInfoArr);
+    //create ticker items
+    var tickerItemElem = $("<div>").addClass("ticker-item");
+    var tickerLogoElem = $("<span>").html('<img src="' + cryptoInfoArr[i].image +'" style="height: 15px; width: 15px;"/>')
+    var tickerCryptTick = $("<span>").html(" " + cryptoInfoArr[i].ticker);
+    var tickerCryptPerf = $("<span>").html(" " + parseFloat(cryptoInfoArr[i].one_day_change).toFixed(2) + "%"); //.toLocaleString()).toFixed(2) + "%");
+    //append ticker items to ticker tape
+    tickerItemElem.append(tickerLogoElem);
+    tickerItemElem.append(tickerCryptTick);
+    tickerItemElem.append(tickerCryptPerf);
+
+    $("#ticker-tape").append(tickerItemElem);
+
+    //create table row
+    var tableRowElem = $("<tr>");
+    //create table data elements
+    var tableFavElem = $("<td>").html('<i class="far fa-crown"></i>');
+    var tableIDElem = $("<td>").html("<b>"+ (i+1) + "</b>");
+    var tableCoinElem = $("<td>").html('<img src="' + cryptoInfoArr[i].image +'" style="height: auto; width: 25px; float: left;"><span style="padding-left: 25px; font-size: .95em;"> <b>' + cryptoInfoArr[i].coin +'</b></span>');
+    var tableCoinTicker = $("<td>").html(cryptoInfoArr[i].ticker);
+    var tableCoinPriceBase = $("<td>").html("<span>" + "$" + " </span>" + baseFiatPrice);
+    var tableCoinPriceEUR = $("<td>").html(cryptoInfoArr[i].eurProfit);
+    var tableCoinPriceGBP = $("<td>").html(cryptoInfoArr[i].gbpProfit);
+    var tableCoinPriceJPY = $("<td>").html(cryptoInfoArr[i].jpyProfit);
+    var tableCoinPriceKRW = $("<td>").html(cryptoInfoArr[i].krwProfit);
+    var tableCoin1D = $("<td>").html(parseFloat(cryptoInfoArr[i].one_day_change).toFixed(2) + "%").addClass("right-text-items");
+    var tableCoin7D = $("<td>").html(parseFloat(cryptoInfoArr[i].week_change).toFixed(2) + "%");
+
+    //append elements in the correct order
+    tableRowElem.append(tableFavElem);
+    tableRowElem.append(tableIDElem);
+    tableRowElem.append(tableCoinElem);
+    tableRowElem.append(tableCoinTicker);
+    tableRowElem.append(tableCoinPriceBase);
+    tableRowElem.append(tableCoinPriceEUR);
+    tableRowElem.append(tableCoinPriceGBP);
+    tableRowElem.append(tableCoinPriceJPY);
+    tableRowElem.append(tableCoinPriceKRW);
+    tableRowElem.append(tableCoin1D);
+    tableRowElem.append(tableCoin7D);
+
+    //get reference to crypto table section and append row
+    $("#crypto-table-rows").append(tableRowElem);
+};
 
 //Get user fiat selection
 $("#dropdown-menu").on("click", function(event){
@@ -116,9 +212,9 @@ $("#dropdown-menu").on("click", function(event){
       $("#base-fiat-select").html(fiatSelection.toUpperCase() + ' <i class="fas fa-caret-down"></i>');
       //pass fiat selection to the currency exchange api
       // getCurrencyExchangeData(fiatSelection);
-      getCryptocurrencyList();
+      getCryptocurrencyList(fiatSelection);
       //save fiat selection to local storage for page reload
     }
 });
 
-getCryptocurrencyList();
+getCryptocurrencyList(fiatSelection);
