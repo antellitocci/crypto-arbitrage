@@ -28,6 +28,7 @@ function getCryptocurrencyList(baseFiat){
     }
     //clear any html out so it doesn't duplicate rows
     $("#crypto-table-rows").empty();
+    $("#ticker-tape").empty();
     
     //get api URL (will need to adjust currency=X to match base selected by user)
     var apiURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=" + baseFiat + "&order=market_cap_desc&per_page=50&page=1&sparkline=false"
@@ -159,13 +160,10 @@ function buildTableData(i, baseFiatPrice){
     var tickerItemElem = $("<div>").addClass("ticker-item");
     var tickerLogoElem = $("<span>").html('<img src="' + cryptoInfoArr[i].image +'" style="height: 15px; width: 15px;"/>')
     var tickerCryptTick = $("<span>").html(" " + cryptoInfoArr[i].ticker);
-    var tickerCryptPerf = $("<span>").html(" " + parseFloat(cryptoInfoArr[i].one_day_change).toFixed(2) + "%"); //.toLocaleString()).toFixed(2) + "%");
-    //append ticker items to ticker tape
-    tickerItemElem.append(tickerLogoElem);
-    tickerItemElem.append(tickerCryptTick);
-    tickerItemElem.append(tickerCryptPerf);
+    var tickerCryptPerf = $("<span>").html(" " + parseFloat(cryptoInfoArr[i].one_day_change).toFixed(2) + "%");
+    
+    
 
-    $("#ticker-tape").append(tickerItemElem);
 
     //create table row
     var tableRowElem = $("<tr>");
@@ -180,7 +178,20 @@ function buildTableData(i, baseFiatPrice){
     var tableCoinPriceJPY = $("<td>").html(cryptoInfoArr[i].jpyProfit);
     var tableCoinPriceKRW = $("<td>").html(cryptoInfoArr[i].krwProfit);
     var tableCoin1D = $("<td>").html(parseFloat(cryptoInfoArr[i].one_day_change).toFixed(2) + "%").addClass("right-text-items");
-    var tableCoin7D = $("<td>").html(parseFloat(cryptoInfoArr[i].week_change).toFixed(2) + "%");
+    var tableCoin7D = $("<td>").html(parseFloat(cryptoInfoArr[i].week_change).toFixed(2) + "%").addClass("right-text-items");
+
+    //color performance ticker and table elements text
+    colorPerformanceTickerItems(tickerCryptPerf);
+    colorPerformanceTableItems(tableCoin1D, tableCoin7D);
+
+
+
+    //append ticker items to ticker tape
+    tickerItemElem.append(tickerLogoElem);
+    tickerItemElem.append(tickerCryptTick);
+    tickerItemElem.append(tickerCryptPerf);
+
+    $("#ticker-tape").append(tickerItemElem);
 
     //append elements in the correct order
     tableRowElem.append(tableFavElem);
@@ -199,6 +210,38 @@ function buildTableData(i, baseFiatPrice){
     $("#crypto-table-rows").append(tableRowElem);
 };
 
+function colorPerformanceTickerItems(tickerOneDay){
+    if((parseFloat(tickerOneDay.html())) >= 0){
+        console.log(parseFloat(tickerOneDay.html()))
+        tickerOneDay.addClass("positive-performance");
+        tickerOneDay.removeClass("negative-performance");
+    }
+    else{
+        tickerOneDay.removeClass("positive-performance");
+        tickerOneDay.addClass("negative-performance");
+    }
+};
+
+function colorPerformanceTableItems(tableCoin1DPerf, tableCoin7DPerf){
+    if((parseFloat(tableCoin1DPerf.html())) >= 0){
+        tableCoin1DPerf.addClass("positive-performance");
+        tableCoin1DPerf.removeClass("negative-performance");
+    }
+    else{
+        tableCoin1DPerf.removeClass("positive-performance");
+        tableCoin1DPerf.addClass("negative-performance");
+    }
+
+    if((parseFloat(tableCoin7DPerf.html())) >= 0){
+        tableCoin7DPerf.addClass("positive-performance");
+        tableCoin7DPerf.removeClass("negative-performance");
+    }
+    else{
+        tableCoin7DPerf.removeClass("positive-performance");
+        tableCoin7DPerf.addClass("negative-performance");
+    }
+};
+
 //Get user fiat selection
 $("#dropdown-menu").on("click", function(event){
     event.preventDefault();
@@ -214,7 +257,14 @@ $("#dropdown-menu").on("click", function(event){
       // getCurrencyExchangeData(fiatSelection);
       getCryptocurrencyList(fiatSelection);
       //save fiat selection to local storage for page reload
+      localStorage.setItem("baseFiat", JSON.stringify(fiatSelection));
     }
 });
+
+function loadLocalStorage(){
+    $("#base-fiat-select").html(fiatSelection.toUpperCase() + ' <i class="fas fa-caret-down"></i>');
+};
+
+loadLocalStorage();
 
 getCryptocurrencyList(fiatSelection);
