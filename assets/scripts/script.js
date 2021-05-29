@@ -9,6 +9,7 @@ dropdown.addEventListener('click', function(event) {
 var fiatSelection = JSON.parse(localStorage.getItem("baseFiat")) || "USD";
 
 //create variables for crypto data
+var cryptoArr = [];
 var cryptoImg;
 var cryptoName;
 var cryptoTicker;
@@ -27,6 +28,12 @@ var dynamicDataTable;
 
 
 function createPageElements(i){
+  if(dynamicDataTable !=undefined)
+  {
+    dynamicDataTable.destroy();
+  }
+  //clear any html out so it doesn't duplicate rows
+  $("#crypto-table-rows").empty();
     //create ticker items
     var tickerItemElem = $("<div>").addClass("ticker-item");
     var tickerLogoElem = $("<span>").html('<img src="' + cryptoImg +'" style="height: 15px; width: 15px;"/>')
@@ -73,14 +80,7 @@ function createPageElements(i){
 }
 
 
-function getCryptocurrenciesTable(baseFiat){
-  if(dynamicDataTable !=undefined)
-  {
-    dynamicDataTable.destroy();
-  }
-  //clear any html out so it doesn't duplicate rows
-  $("#crypto-table-rows").empty();
-
+async function getCryptocurrenciesTable(baseFiat){
   //get api URL (will need to adjust currency=X to match base selected by user)
   var apiURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=" + baseFiat + "&order=market_cap_desc&per_page=150&page=1&sparkline=true&price_change_percentage=24h%2C7d%2C30d%2C1y"
 
@@ -90,7 +90,7 @@ function getCryptocurrenciesTable(baseFiat){
     if(response.ok){
       response.json().then(function(data){
         console.log(data);
-    
+        cryptoArr = data;
         for(var i = 0; i < data.length; i++)
         {
           //grab cryptocurrency information
@@ -98,22 +98,15 @@ function getCryptocurrenciesTable(baseFiat){
            cryptoName = data[i].name;
            cryptoTicker = data[i].symbol;
            cryptoCurrentPrice = data[i].current_price;
-
-          // var coinToFiatURL = "https://api.coingecko.com/api/v3/coins/" + data[i].id +"?localization=false&tickers=true&market_data=true&community_data=false&developer_data=false&sparkline=false"
-          // fetch(coinToFiatURL).then(function(response){
-          //   if(response.ok){
-          //     response.json().then(function(coinInfo){
-          //       cryptoEURPrice = coinInfo.market_data.current_price["eur"];
-          //       console.log(cryptoEURPrice);
-          //       cryptoGBPPrice = coinInfo.market_data.current_price["gbp"];
-          //       cryptoJPYPrice = coinInfo.market_data.current_price["jpy"];
-          //       cryptoKRMPrice = coinInfo.market_data.current_price["krm"];
-          //     });
-          //   }
-          // });
-          
            crypto1D = data[i].price_change_percentage_24h_in_currency;
            crypto7D = data[i].price_change_percentage_7d_in_currency;
+
+          var coinToFiatURL = "https://api.coingecko.com/api/v3/coins/" + data[i].id +"?localization=false&tickers=true&market_data=true&community_data=false&developer_data=false&sparkline=false"
+          
+          fiatCoinInfo = fetch(coinToFiatURL).then(function(response){
+            console.log(fiatCoinInfo);
+          });
+
            createPageElements(i);
         }
         dynamicDataTable = $("#crypto-table").DataTable();
@@ -127,6 +120,7 @@ function getCryptocurrenciesTable(baseFiat){
   });
 
 };
+
 
 
 function getCurrencyExchangeData(baseFiat){
