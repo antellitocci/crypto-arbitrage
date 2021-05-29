@@ -29,7 +29,11 @@ function getCryptocurrencyList(baseFiat){
     //clear any html out so it doesn't duplicate rows
     $("#crypto-table-rows").empty();
     $("#ticker-tape").empty();
-    
+    //add loading spinner
+    var loader = $("<img>").attr("src", "./assets/images/bitcoin-spinning.gif").addClass("loading-image");
+    var loaderRow = $("<td>").attr({colspan: "5", height: "256px"});
+    loaderRow.append(loader);
+    $("#crypto-table-rows").append(loaderRow);
     //get api URL (will need to adjust currency=X to match base selected by user)
     var apiURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=" + baseFiat + "&order=market_cap_desc&per_page=50&page=1&sparkline=false"
 
@@ -147,6 +151,8 @@ function performFiatCryptoConversions(){
         basePrice = bpString.join(".");
 
 
+        //remove loading spinner
+        //$("#crypto-table-rows").empty();
         buildTableData(i, basePrice);
     }
     dynamicDataTable = $("#crypto-table").DataTable();
