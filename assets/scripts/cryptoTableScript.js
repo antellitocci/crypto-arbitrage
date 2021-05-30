@@ -12,7 +12,8 @@ var fiatSelection = JSON.parse(localStorage.getItem("baseFiat")) || "USD";
 var cryptoListArr = [];
 var cryptoInfoArr = [];
 var exchangeRateArr = [];
-//profit data
+//currency symbol information
+var currencySymbol = "&#36;";
 //table info
 var dynamicDataTable;
 
@@ -28,10 +29,9 @@ function getCryptocurrencyList(baseFiat){
     }
     //clear any html out so it doesn't duplicate rows
     $("#crypto-table-rows").empty();
-    $("#ticker-tape").empty();
     //add loading spinner
     var loader = $("<img>").attr("src", "./assets/images/bitcoin-spinning.gif").addClass("loading-image");
-    var loaderRow = $("<td>").attr({colspan: "5", height: "256px"});
+    var loaderRow = $("<td>").attr({colspan: "6", height: "256px"});
     loaderRow.append(loader);
     $("#crypto-table-rows").append(loaderRow);
     //get api URL (will need to adjust currency=X to match base selected by user)
@@ -47,10 +47,31 @@ function getCryptocurrencyList(baseFiat){
     }).then(function(data){
         cryptoListArr = data;
         console.log(cryptoListArr);
+        buildTickerItems();
         getCryptocurrencyData();
     }).catch(function(error){
         console.warn(error);
     });
+};
+
+function buildTickerItems(){
+    $("#ticker-tape").empty();
+    for(i = 0; i < cryptoListArr.length; i ++){
+        //create ticker items
+        var tickerItemElem = $("<div>").addClass("ticker-item");
+        var tickerLogoElem = $("<span>").html('<img src="' + cryptoListArr[i].image +'" style="height: 15px; width: 15px;"/>')
+        var tickerCryptTick = $("<span>").html(" " + (cryptoListArr[i].symbol).toUpperCase());
+        var tickerCryptPerf = $("<span>").html(" " + parseFloat(cryptoListArr[i].market_cap_change_percentage_24h).toFixed(2) + "%");
+        
+        colorPerformanceTickerItems(tickerCryptPerf);
+
+        //append ticker items to ticker tape
+        tickerItemElem.append(tickerLogoElem);
+        tickerItemElem.append(tickerCryptTick);
+        tickerItemElem.append(tickerCryptPerf);
+
+        $("#ticker-tape").append(tickerItemElem);
+    }
 };
 
 async function getCryptocurrencyData(){
@@ -145,7 +166,7 @@ function performFiatCryptoConversions(){
         var potentialProfitKRW = convertedKRWToBase - basePrice;
         cryptoInfoArr[i]["krwProfit"] = parseFloat(potentialProfitKRW).toFixed(5);
 
-        //use regex to add 
+        //use regex to add commas in appropriate places
         var bpString = basePrice.toString().split(".");
         bpString[0] = bpString[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         basePrice = bpString.join(".");
@@ -159,18 +180,30 @@ function performFiatCryptoConversions(){
 
 };
 
+function chooseCorrectCurrencySymbol(){
+    if(fiatSelection == "usd" || fiatSelection == "cad"){
+        currencySymbol = "&#36;"
+    }
+    else if(fiatSelection == "cny" || fiatSelection == "jpy"){
+        currencySymbol = "&yen;"
+    }
+    else if(fiatSelection == "eur"){
+        currencySymbol = "&euro;";
+    }
+    else if (fiatSelection == "krw"){
+        currencySymbol = "&#8361;";
+    }
+    else if (fiatSelection == "gbp"){
+        currencySymbol = "&#8356;";
+    }
+    else{
+        currencySymbol = "&#8381;";
+    }
+}
+
 function buildTableData(i, baseFiatPrice){
-    console.log("did it.");
     console.log(cryptoInfoArr);
-    //create ticker items
-    var tickerItemElem = $("<div>").addClass("ticker-item");
-    var tickerLogoElem = $("<span>").html('<img src="' + cryptoInfoArr[i].image +'" style="height: 15px; width: 15px;"/>')
-    var tickerCryptTick = $("<span>").html(" " + cryptoInfoArr[i].ticker);
-    var tickerCryptPerf = $("<span>").html(" " + parseFloat(cryptoInfoArr[i].one_day_change).toFixed(2) + "%");
-    
-    
-
-
+    chooseCorrectCurrencySymbol();
     //create table row
     var tableRowElem = $("<tr>");
     //create table data elements
@@ -178,26 +211,16 @@ function buildTableData(i, baseFiatPrice){
     var tableIDElem = $("<td>").html("<b>"+ (i+1) + "</b>");
     var tableCoinElem = $("<td>").html('<img src="' + cryptoInfoArr[i].image +'" style="height: auto; width: 25px; float: left;"><span style="padding-left: 25px; font-size: .95em;"> <b>' + cryptoInfoArr[i].coin +'</b></span>');
     var tableCoinTicker = $("<td>").html(cryptoInfoArr[i].ticker);
-    var tableCoinPriceBase = $("<td>").html("<span>" + "$" + " </span>" + baseFiatPrice);
-    var tableCoinPriceEUR = $("<td>").html(cryptoInfoArr[i].eurProfit);
-    var tableCoinPriceGBP = $("<td>").html(cryptoInfoArr[i].gbpProfit);
-    var tableCoinPriceJPY = $("<td>").html(cryptoInfoArr[i].jpyProfit);
-    var tableCoinPriceKRW = $("<td>").html(cryptoInfoArr[i].krwProfit);
+    var tableCoinPriceBase = $("<td>").html("<span>" + currencySymbol + " </span>" + baseFiatPrice);
+    var tableCoinPriceEUR = $("<td>").html(currencySymbol + " " + cryptoInfoArr[i].eurProfit);
+    var tableCoinPriceGBP = $("<td>").html(currencySymbol + " " + cryptoInfoArr[i].gbpProfit);
+    var tableCoinPriceJPY = $("<td>").html(currencySymbol + " " + cryptoInfoArr[i].jpyProfit);
+    var tableCoinPriceKRW = $("<td>").html(currencySymbol + " " + cryptoInfoArr[i].krwProfit);
     var tableCoin1D = $("<td>").html(parseFloat(cryptoInfoArr[i].one_day_change).toFixed(2) + "%").addClass("right-text-items");
     var tableCoin7D = $("<td>").html(parseFloat(cryptoInfoArr[i].week_change).toFixed(2) + "%").addClass("right-text-items");
 
     //color performance ticker and table elements text
-    colorPerformanceTickerItems(tickerCryptPerf);
     colorPerformanceTableItems(tableCoin1D, tableCoin7D);
-
-
-
-    //append ticker items to ticker tape
-    tickerItemElem.append(tickerLogoElem);
-    tickerItemElem.append(tickerCryptTick);
-    tickerItemElem.append(tickerCryptPerf);
-
-    $("#ticker-tape").append(tickerItemElem);
 
     //append elements in the correct order
     tableRowElem.append(tableFavElem);
@@ -218,13 +241,14 @@ function buildTableData(i, baseFiatPrice){
 
 function colorPerformanceTickerItems(tickerOneDay){
     if((parseFloat(tickerOneDay.html())) >= 0){
-        console.log(parseFloat(tickerOneDay.html()))
         tickerOneDay.addClass("positive-performance");
+        tickerOneDay.append($("<span>").html(" <img src='./assets/images/arrow-alt-up-solid.svg' height='15px' width='15px'/>"))
         tickerOneDay.removeClass("negative-performance");
     }
     else{
         tickerOneDay.removeClass("positive-performance");
         tickerOneDay.addClass("negative-performance");
+        tickerOneDay.append($("<span>").html(" <img src='./assets/images/arrow-alt-down-solid.svg' height='15px' width='15px'/>"))
     }
 };
 

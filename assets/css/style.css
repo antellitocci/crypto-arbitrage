@@ -29,12 +29,12 @@
 }
 
 .ticker-container {
-  
+  font-weight: bold;
   position: relative;
   width: 100%;
   overflow: hidden;
   height: 2rem;
-  background-color: rgba(199,199,191,0.45);
+  background-color: white;
   border: 1px solid rgba(0,0,0,0.5);
   box-sizing: content-box;
   margin-bottom: 10px;
@@ -82,7 +82,7 @@ h1,h2,p {
 }
 
 .menu-cols{
-    width: 70rem;
+    width: 10%;
     padding: 10px;
 }
 
@@ -190,7 +190,7 @@ footer .container{
 }
 
 .positive-performance{
-  color: limegreen;
+  color: #659D32;
 }
 
 .negative-performance{
