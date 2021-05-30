@@ -184,3 +184,19 @@ footer .container{
   background-color: black !important;
   margin-top: 20px !important;
 }
+
+.right-text-items{
+  text-align: right !important;
+}
+
+.positive-performance{
+  color: limegreen;
+}
+
+.negative-performance{
+  color: red;
+}
+
+.loading-image{
+  margin-left: 100%;
+}
