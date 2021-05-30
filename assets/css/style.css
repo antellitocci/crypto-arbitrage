@@ -77,10 +77,6 @@ h1,h2,p {
     padding: 0 5%;
 }
 
-.container{
-    margin-top: 50px;
-}
-
 .menu-cols{
     width: 10%;
     padding: 10px;
@@ -199,4 +195,10 @@ footer .container{
 
 .loading-image{
   margin-left: 100%;
+}
+
+/* Toast Styling */
+.notification {
+  background: #34468e !important;
+  font-size: 1.25em;
 }

@@ -31,7 +31,7 @@ function getCryptocurrencyList(baseFiat){
     $("#crypto-table-rows").empty();
     //add loading spinner
     var loader = $("<img>").attr("src", "./assets/images/bitcoin-spinning.gif").addClass("loading-image");
-    var loaderRow = $("<td>").attr({colspan: "6", height: "256px"});
+    var loaderRow = $("<td>").attr({colspan: "5.5", height: "256px"});
     loaderRow.append(loader);
     $("#crypto-table-rows").append(loaderRow);
     //get api URL (will need to adjust currency=X to match base selected by user)
@@ -298,3 +298,15 @@ function loadLocalStorage(){
 loadLocalStorage();
 
 getCryptocurrencyList(fiatSelection);
+
+const toastMessage = "First time? Check out our education page: <a href='https://www.google.com'>here</a>";
+//Show toast on page load
+bulmaToast.toast({
+    duration: 60000,
+    pauseOnHover: true,
+    message: toastMessage,
+    position: "bottom-right",
+    type: "is-link",
+    dismissible: true,
+    color: "#00000",
+});

@@ -47,7 +47,7 @@
 
     <!-- End of navagation bar -->
      <!--Start Ticker-->
-    <div class="container">
+    <div class="container tick-main-container">
         <div class="ticker-container">
             <div class="ticker" id="ticker-tape">
             </div>
@@ -56,22 +56,18 @@
 
     <!--Start Intro Content-->
     <div class="container" style="margin: 20px auto;">
-        <p style="color: white;"><i>Crypto Arbitrage</i> is an application designed to identify currency exchange rate arbitrage
+        <p style="color: white; font-size: larger;"><i>Crypto Arbitrage</i> is an application designed to identify currency exchange rate arbitrage
             <abbr title="Arbitrage: The buying and selling of securities, currency, or commodities in different markets or derivative forms in order to take advantage of differing prices for the same asset."><i class="fas fa-info-circle" style="font-size: 0.75em;"></i></abbr>
             opportunities in the cryptocurrency market. While the major
             coins are likely priced efficiently, we anticipate there will be a select group of smaller, less well-known coins that exhibit pricing discrepancies due to less efficient market traits.
         </p>
-        <h3>How This Works</h3>
-        <p style="color: white;">
-            The table below populates current market data for the top 50 cryptocurrencies by market capitilization (Price per coin * number of outstanding tokens)
-
-        </p>  
     </div>
 
 
 
     <!--Start Favorites Section-->
     <div class="container">
+        <h5 style="font-size: x-large; font-weight: bold;">Top 5 Coins</h5>
       <div class="columns" id="topFiveCoins">
       </div>
     </div>
@@ -90,7 +86,7 @@
             <div class="dropdown-menu" role="menu">
                 <div class="dropdown-content" style="background-color: lightgray;" id="dropdown-menu">
                     <span style="text-align: center;"><h4 style="font-weight: bolder; color: rgba(0,0,0,0.75);">Popular Currencies</h4></span>
-                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-divider" style="border: 1px solid rgba(0,0,0,0.25);"></div>
                     <a class="dropdown-item fiat-usd" data-fiat="usd">
                         US Dollar
                     </a>
@@ -143,11 +139,13 @@
             </table>
         </div>
     </div>
-
+    <!--Import Bulma Toast Plug In-->
+    <script src="https://cdn.jsdelivr.net/npm/bulma-toast@2.3.1/dist/bulma-toast.min.js"></script>   
     <!--Import JQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!--Import Data Tables JS-->
-    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>   
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
     <!--Link to Personal Script-->
     <script src ="assets/scripts/cryptoTableScript.js"></script>
     <script src="js/favorites.js"></script>   
