@@ -1,17 +1,15 @@
-fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true") 
+fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=5&page=1&sparkline=true") 
 
 .then(function(response) {
     return response.json();
   })
   .then(function(data) {
-    console.log(data);
 // pull data from api
 for (i =0; i <5; i++) {
   let cryptoImg = data[i].image;
   let cryptoName = data[i].name;
   let cryptoTicker = data[i].symbol;
   let cryptoCurrentPrice = data[i].current_price;
-console.log(cryptoName)
 //  create html elements and adding classes
   let columnElm = $("<div>").addClass("column")
   let cardElm = $("<div>").addClass("card card-height");

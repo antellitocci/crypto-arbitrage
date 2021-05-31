@@ -20,7 +20,7 @@ body {
     background-color: #C7C7BF;
 }
 .container {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .card-height {
     height: 120px !important;
@@ -56,4 +56,8 @@ body {
 
 .ti-perf {
     color: #34468e;
+}
+
+.tick-main-container{
+    margin-top: 0px !important;
 }

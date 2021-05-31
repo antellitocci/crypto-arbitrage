@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
     <!--Import custom stylesheets-->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="main.css">
     <title>Crypto Arbitrage</title>
 </head>
 
@@ -25,22 +25,26 @@
             <a class="navbar-item" id="logo">
             </a>
         </div> 
-        <div class="navbar-end">
-        <!-- navbar items -->
-            <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link is-arrowless">
-            <i class="fas fa-bars"></i>
-            </a>
-            <div class="navbar-dropdown is-right" id="dropdown">
-                <a class="navbar-item">
+    </div>
+    <div class="navbar-end">
+      <!-- navbar items -->
+          <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link is-arrowless" style="color: white; font-size: 1.75em;">
+                <i class="fas fa-bars"></i>
+              </a>
+              <div class="navbar-dropdown is-right" style="font-size: 1.25em;">
+                <a href="index.html" class="navbar-item">
                     Home
                 </a>
-                <a class="navbar-item">
-                    Exchange Calculator
+                <a href="getting-started.html" class="navbar-item">
+                    Getting Started
                 </a>
-            </div>
-
-    <div class="container">
+              </div>
+          </div>
+      </div>
+    <!-- End of navagation bar -->
+     <!--Start Ticker-->
+    <div class="container tick-main-container">
         <div class="ticker-container">
             <div class="ticker" id="ticker-tape">
             </div>
@@ -49,15 +53,15 @@
 
     <!--Start Intro Content-->
     <div class="container" style="margin: 20px auto;">
-        <p style="color: white;"><i>Crypto Arbitrage</i> is an application designed to identify currency exchange rate arbitrage
+        <p style="color: white; font-size: larger;"><i>Crypto Arbitrage</i> is an application designed to identify currency exchange rate arbitrage
             <abbr title="Arbitrage: The buying and selling of securities, currency, or commodities in different markets or derivative forms in order to take advantage of differing prices for the same asset."><i class="fas fa-info-circle" style="font-size: 0.75em;"></i></abbr>
-            opportunities in the cryptocurrency market. While the major
-            coins are likely priced efficiently, we anticipate there will be a select group of smaller, less well-known coins that exhibit pricing discrepancies due to less efficient market traits.
-        </p>  
+            opportunities in the cryptocurrency market. To understand how the application works, please visit our <a href="getting-started.html" target="_blank"><i>Getting Started</i></a> page.
+        </p>
     </div>
 
     <!--Start Favorites Section-->
     <div class="container">
+        <h5 style="font-size: x-large; font-weight: bold;">Top 5 Coins</h5>
       <div class="columns" id="topFiveCoins">
       </div>
     </div>
@@ -66,45 +70,44 @@
 
     <!--User Preferences-->
     <div class="container" id="currency">
-        <span>Select Base Currency: </span>
-        <div class="dropdown">
+        <span style="color: white;">Select Base Currency: </span>
+        <div class="dropdown is-right">
             <div class="dropdown-trigger">
-                <button class="button" style="background-color: #34468e; color: white; font-weight: bold; border: 1px solid black;" aria-haspopup="true" aria-controls="dropdown-menu3">
+                <button class="button" style="background-color: #34468e; color: white; font-weight: bold; border: 1px solid black;" aria-haspopup="true" aria-controls="currency">
                     <span id="base-fiat-select">USD <i class="fas fa-caret-down"></i></span>
                 </button>
             </div>
             <div class="dropdown-menu" role="menu">
-              <div class="dropdown-content" style="background-color: lightgray;">
-                  <span style="text-align: center;"><h4 style="font-weight: bolder; color: rgba(0,0,0,0.75);">Popular Currencies</h4></span>
-                <div class="columns is-multiline menu-cols" id="dropdown-menu" >
-                    <a class="dropdown-item column is-one-quarter fiat-usd" data-fiat="usd">
+                <div class="dropdown-content" style="background-color: lightgray;" id="dropdown-menu">
+                    <span style="text-align: center;"><h4 style="font-weight: bolder; color: rgba(0,0,0,0.75);">Popular Currencies</h4></span>
+                    <div class="dropdown-divider" style="border: 1px solid rgba(0,0,0,0.25);"></div>
+                    <a class="dropdown-item fiat-usd" data-fiat="usd">
                         US Dollar
                     </a>
-                    <a class="dropdown-item column is-one-quarter fiat-euro" data-fiat="eur">
+                    <a class="dropdown-item fiat-euro" data-fiat="eur">
                         Euro
                     </a>
-                    <a class="dropdown-item column is-one-quarter fiat-cny" data-fiat="cny">
+                    <a class="dropdown-item fiat-cny" data-fiat="cny">
                         Chinese Yuan
                     </a>
-                    <a class="dropdown-item column is-one-quarter fiat-krw" data-fiat="krw">
+                    <a class="dropdown-item fiat-krw" data-fiat="krw">
                         South Korean Won
                     </a>
-                    <a class="dropdown-item column is-one-quarter fiat-jpy" data-fiat="jpy">
+                    <a class="dropdown-item fiat-jpy" data-fiat="jpy">
                         Japanese Yen
                     </a>
-                    <a class="dropdown-item column is-one-quarter fiat-cad" data-fiat="cad">
+                    <a class="dropdown-item fiat-cad" data-fiat="cad">
                         Canadian Dollar
                     </a>
-                    <a class="dropdown-item column is-one-quarter fiat-gbp" data-fiat="gbp">
+                    <a class="dropdown-item fiat-gbp" data-fiat="gbp">
                         British Pound Sterling
                     </a>
-                    <a class="dropdown-item column is-one-quarter fiat-rub" data-fiat="rub">
+                    <a class="dropdown-item fiat-rub" data-fiat="rub">
                         Russian Ruble
                     </a>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
     </div>
 
     <div class="container">
@@ -131,19 +134,20 @@
         </div>
     </div>
 
-
+    <!--Import Bulma Toast Plug In-->
+    <script src="https://cdn.jsdelivr.net/npm/bulma-toast@2.3.1/dist/bulma-toast.min.js"></script>   
     <!--Import JQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!--Import Data Tables JS-->
-    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>   
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <!--Link to Personal Script-->
-    <script src="assets/scripts/script.js"></script>
-    <script src="./js/favorites.js"></script>   
+    <script src ="assets/scripts/cryptoTableScript.js"></script>
+    <script src="js/favorites.js"></script>   
 </body>
 <footer class="footer">
     <div class="container">
         <p style="color: white;"><i class="fas fa-exclamation-triangle" style="font-size: 1.5em; color: red;"></i> <span style="color: red; font-size: 1.5em;">DISCLAIMER: </span>The data illustrated here is by no means exhaustive, its accuracy cannot be guaranteed, and, most of all, it <b>should not</b> be used to make investment decisions. 
-            Investing is fraught with risk and we recommend you source your own consul; financial, legal, or otherwise, and conduct your own research before relying on the content presented herein.
+            Investing is fraught with risk and we recommend you source your own counsel; financial, legal, or otherwise, and conduct your own research before relying on the content presented herein.
         </p>
     </div>
     <div class="content has-text-centered footer-style" style="margin-top: 20px;">
