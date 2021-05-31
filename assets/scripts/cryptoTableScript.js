@@ -5,7 +5,7 @@ $(".dropdown").on('click', function(event) {
 });
 
 //create a variable to hold a user's base fiat currency selection
-var fiatSelection = JSON.parse(localStorage.getItem("baseFiat")) || "USD";
+var fiatSelection = JSON.parse(localStorage.getItem("baseFiat")) || "usd";
 
 //create an array to store responses from API calls
 var cryptoListArr = [];
