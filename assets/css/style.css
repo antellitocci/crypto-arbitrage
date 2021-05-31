@@ -170,7 +170,7 @@ input{
   font-family: 'Work Sans', sans-serif;
 }
 
-/**/
+/*footer styling*/
 footer .container{
   margin-top: 20px !important;
 }
@@ -185,6 +185,7 @@ footer .container{
   text-align: right !important;
 }
 
+/*Styles based on performance of asset for ticker and table*/
 .positive-performance{
   color: #659D32;
 }
@@ -193,6 +194,7 @@ footer .container{
   color: red;
 }
 
+/*Table loading image styling*/
 .loading-image{
   margin-left: 100%;
 }

@@ -1,0 +1,39 @@
+div{
+    font-size: 1.05em;
+}
+.crypto-101 div{
+    margin: 25px auto;
+}
+
+.crypto-101 h3{
+    font-size: 1.5em !important;
+    font-weight: bold !important;
+    margin-top: 30px;
+    color: #2199ea;
+    padding-bottom: 10px;
+}
+
+.gs-ul{
+    line-height: 1.5em;
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.section.is-medium{
+    padding-bottom: 50px !important;
+}
+
+#crypto-101-section h1, #crypto-arbitrage h1{
+    color: #2199ea;
+    font-size: 2.5em;
+}
+
+#crypto-101-section h2, #crypto-arbitrage h2{
+    color: rgb(199,199,191);
+    font-size: 1.5em;
+}
+
+#note{
+    text-align: center !important;
+    color: #2199ea;
+}

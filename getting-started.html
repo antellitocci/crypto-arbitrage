@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Import Bulma Framework-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <!--Import FontAwesome Icons-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-iKbFRxucmOHIcpWdX9NTZ5WETOPm0Goy0WmfyNcl52qSYtc2Buk0NCe6jU1sWWNB" crossorigin="anonymous">
+    <!--Import Data Tables-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <!--Import custom stylesheets-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="assets/css/getting-started.css">
+    <title>Crypto Arbitrage | Getting Started</title>
+</head>
+<body>
+ <!-- Start of navagation bar -->
+    <div class="navbar-menu">
+        <div class="navbar-start">
+          <!-- navbar items -->
+            <a class="navbar-item" id="logo">
+            </a>
+        </div> 
+    </div>
+    <div class="navbar-end">
+            <!-- navbar items -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link is-arrowless">
+                    <i class="fas fa-bars"></i>
+                    </a>
+                    <div class="navbar-dropdown is-right">
+                    <a href="index.html" class="navbar-item">
+                        Home
+                    </a>
+                    <a href="getting-started.html" class="navbar-item">
+                        Getting Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    <!-- End of navagation bar -->
+
+    <!--Getting Started Information-->
+    <div class="container" id="crypto-101-section">
+        <section class="section is-medium" style="padding-top: 0;">
+            <h1 class="title">Cryptocurrency Basics</h1>
+            <h2 class="subtitle">Understanding coins and the blockchain.</h2>
+            <div class="container">
+                <div class="crypto-101">
+                    Rather than reinvent the wheel, we've compiled a list of helpful resources to get you up to speed on cryptocurrencies and their underlying technology – the blockchain.
+                    <h3>Cryptocurrency</h3>
+                    <ul class="gs-ul">
+                        <li><span>Binance Academy's </span><a style="font-weight: bold;" href="https://academy.binance.com/en/articles/what-is-cryptocurrency" target="_blank"><i>What Is Cryptocurrency?</i></a></li>
+                        <li><span>Coinbase's </span><a style="font-weight: bold;" href="https://www.coinbase.com/learn" target="_blank"><i>Learning Content | All Things Crypto</i></a></li>
+                        <li><span>Binance Academy's </span><a style="font-weight: bold;" href="https://academy.binance.com/en/articles/how-to-secure-your-cryptocurrency" target="_blank"><i>How to Secure Your Cryptocurrency</i></a></li>
+                        <li><span>Binance Academy's </span><a style="font-weight: bold;" href="https://academy.binance.com/en/articles/what-is-cryptocurrency-mining" target="_blank"><i>What Is Cryptocurrency Mining?</i></a></li>
+                    </ul>
+                    <h3>Blockchain</h3>
+                    <ul class="gs-ul">
+                        <li><span>Binance Academy's </span><a style="font-weight: bold;" href="https://academy.binance.com/en/articles/what-is-blockchain-technology-a-comprehensive-guide-for-beginners" target="_blank"><i>What Is Blockchain Technology?</i></a></li>
+                        <li><span>Binance Academy's </span><a style="font-weight: bold;" href="https://academy.binance.com/en/articles/how-does-blockchain-work" target="_blank"><i>How Does Blockchain Work?</i></a></li>
+                        <li><span>Binance Academy's </span><a style="font-weight: bold;" href="https://academy.binance.com/en/articles/positives-and-negatives-of-blockchain" target="_blank"><i>Blockchain Advantages and Disadvantages</i></a></li>
+                        <li><span>Binance Academy's </span><a style="font-weight: bold;" href="https://academy.binance.com/en/articles/history-of-blockchain" target="_blank"><i>History of Blockchain</i></a></li>
+                        <li><span>Binance Academy's </span><a style="font-weight: bold;" href="https://academy.binance.com/en/articles/what-makes-a-blockchain-secure" target="_blank"><i>What Makes a Blockchain Secure?</i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="container" id="crypto-arbitrage">
+        <section class="section is-medium" style="padding-top: 0;">
+            <h1 class="title">How Crypto Arbitrage Works</h1>
+            <div class="crypto-101">
+                <div>As an application, <b><i>Crypto Arbitrage</i></b> is designed to show you if there are trading opportunities for a certain cryptocurrency resulting from discrepancies in exchange rates of national (<a href="https://en.wikipedia.org/wiki/Fiat_money" target="_blank">fiat</a>) currencies. This 
+                    is best explained through example.
+                </div>
+                <div>To use the application: you first select a base fiat currency as indicated in the screenshot below:
+                </div>
+                <img src="assets/images/select-a-currency.png"/>
+                <div>This will be the basis for comparison and used to discover potential arbitrage opportunities. Let's take a look at the table itself.</div>
+                <img src="assets/images/crypto-arbitrage-table screenshot.png"/>
+                <div>In the table, you are presented with the top 50 cryptocurrencies ranked in descending order by market capitalization. Market capitalization is arrived at by taking the <i>Total number of coins outsanding multiplied by the current market price of the coin.</i>
+                    Typically, a higher market capitalization indicates a higher popularity of that coin. This is why you are likely already familiar with the top two coins in the list – Bitcoin and Ethereum.
+                </div>
+                <div id="note"><i><b>Note: We are only able to show you the top 50 cryptocurrencies by market cap due to limitations of our chosen API.</b></i></div>
+                <div>The first three columns display the coin's identifying information (rank, image, name, and symbol). The fourth column shows you the price of that coin in your selected base currency.</div>
+                <div>Where things start to get interesting, and, where the bulk of <i>Crypto Arbitrage's</i> use is illustrated, is in columns five through eight. These columns tell us our potential arbitrage opportunity
+                    if we were to buy the coin in that column's currency then convert it back to our selected base currency.
+                </div>
+                <div>For example, let's look at column five <i>(Price/EUR/Base)</i> for Bitcoin in the image above. What the <b>$11.33524</b> figure is telling us is this: <b>If we were to buy a Bitcoin in Euros and then sell that Bitcoin for US Dollars
+                    we would stand to make an extra $11.33524 per Bitcoin purchased and sold.</b></div> 
+                <div>
+                    Similarily, if we look at column six (Price/GBP/Base), this tells us that if we were to buy a Bitcoin in British Pounds and sell it for US Dollars, we would make an additional
+                    $32.03135. If you skip to column eight (Price/KRW/Base), you would see that buying a Bitcoin in Korean Won is less advantageous to us. If we were to do so and then sell the Bitcoin for US Dollars, we would actually walk away with
+                    $54.99948 less.
+                </div>
+                <div>Regardless of the base fiat currency you select, the desired results remain the same. A positive number is good and presents a potential arbitrage opportunity. A negative number is bad and does not indicate a potential arbitrage opportunity.</div>
+            </div>
+        </section>
+    </div>
+
+    <!--Import Bulma Toast Plug In-->
+    <script src="https://cdn.jsdelivr.net/npm/bulma-toast@2.3.1/dist/bulma-toast.min.js"></script>   
+    <!--Import JQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--Import Data Tables JS-->
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <!--Link to Personal Script-->
+
+</body>
+<footer class="footer">
+    <div class="container">
+        <p style="color: white;"><i class="fas fa-exclamation-triangle" style="font-size: 1.5em; color: red;"></i> <span style="color: red; font-size: 1.5em;">DISCLAIMER: </span>The data illustrated here is by no means exhaustive, its accuracy cannot be guaranteed, and, most of all, it <b>should not</b> be used to make investment decisions. 
+            Investing is fraught with risk and we recommend you source your own counsel; financial, legal, or otherwise, and conduct your own research before relying on the content presented herein.
+        </p>
+    </div>
+    <div class="content has-text-centered footer-style" style="margin-top: 20px;">
+        <p>
+            <b>Created by:</b> <a href="https://github.com/lmcmanaman" target="_blank">Leslie McManaman</a> | 
+            <a href="https://github.com/ghazie754" target="_blank">Ghazi Ramadan</a> | 
+            <a href="https://github.com/antellitocci" target="_blank">Andrew Tellitocci</a>
+        </p>
+        <p>Cryptocurrency data provided by <span><a href="https://www.coingecko.com/en/api" target="_blank">CoinGecko API</a></span></p>
+        <p>Fiat currency exchange rate data provided by <span><a href="https://www.exchangerate-api.com/" target="_blank">Exchange Rate API</a></span></p>
+    </div>
+</footer>
+</html>

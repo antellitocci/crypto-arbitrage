@@ -1,8 +1,8 @@
 //open dropdown fiat selection when user clicks
-var dropdown = document.querySelector('.dropdown');
-dropdown.addEventListener('click', function(event) {
-  event.stopPropagation();
-  dropdown.classList.toggle('is-active');
+//var dropdown = document.querySelector('.dropdown');
+$(".dropdown").on('click', function(event) {
+  //event.stopPropagation();
+  $(".dropdown").toggleClass('is-active');
 });
 
 //create a variable to hold a user's base fiat currency selection
@@ -299,7 +299,7 @@ loadLocalStorage();
 
 getCryptocurrencyList(fiatSelection);
 
-const toastMessage = "First time? Check out our education page: <a href='https://www.google.com'>here</a>";
+const toastMessage = "First time or new to crypto? Check out our education page: <a href='./getting-started.html' target='_blank'>here</a>";
 //Show toast on page load
 bulmaToast.toast({
     duration: 60000,
