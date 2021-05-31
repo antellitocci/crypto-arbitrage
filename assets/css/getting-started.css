@@ -33,7 +33,7 @@ div{
     font-size: 1.5em;
 }
 
-#note{
+.note{
     text-align: center !important;
     color: #2199ea;
 }

@@ -28,10 +28,10 @@
     <div class="navbar-end">
             <!-- navbar items -->
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link is-arrowless">
+                    <a class="navbar-link is-arrowless" style="color: white; font-size: 1.75em;">
                     <i class="fas fa-bars"></i>
                     </a>
-                    <div class="navbar-dropdown is-right">
+                    <div class="navbar-dropdown is-right" style="font-size: 1.25em;">
                     <a href="index.html" class="navbar-item">
                         Home
                     </a>
@@ -85,7 +85,7 @@
                 <div>In the table, you are presented with the top 50 cryptocurrencies ranked in descending order by market capitalization. Market capitalization is arrived at by taking the <i>Total number of coins outsanding multiplied by the current market price of the coin.</i>
                     Typically, a higher market capitalization indicates a higher popularity of that coin. This is why you are likely already familiar with the top two coins in the list – Bitcoin and Ethereum.
                 </div>
-                <div id="note"><i><b>Note: We are only able to show you the top 50 cryptocurrencies by market cap due to limitations of our chosen API.</b></i></div>
+                <div class="note"><i><b>Note: We are only able to show you the top 50 cryptocurrencies by market cap due to limitations of our chosen API.</b></i></div>
                 <div>The first three columns display the coin's identifying information (rank, image, name, and symbol). The fourth column shows you the price of that coin in your selected base currency.</div>
                 <div>Where things start to get interesting, and, where the bulk of <i>Crypto Arbitrage's</i> use is illustrated, is in columns five through eight. These columns tell us our potential arbitrage opportunity
                     if we were to buy the coin in that column's currency then convert it back to our selected base currency.
@@ -98,6 +98,11 @@
                     $54.99948 less.
                 </div>
                 <div>Regardless of the base fiat currency you select, the desired results remain the same. A positive number is good and presents a potential arbitrage opportunity. A negative number is bad and does not indicate a potential arbitrage opportunity.</div>
+                <div>Finally, the calculation for columns five through eight is, for example:</div>
+                <div class="note">If: 1 Bitcoin = &euro;50,000 (EUR) and 1 Bitcoin = $55,000 (USD). The USD to EUR exchange rate is 0.8.</div>
+                <div class="note">Then: &euro;50,000 (EUR) divided by the exchange rate of 0.8 = $62,500 (USD). Thus, our arbitrage opportunity is equal to
+                    $62,500 (Euros converted to US Dollars price) minus $55,000 (price of 1 Bitcoin in US Dollars) = <b><u>$7,500</u></b> per Bitcoin traded.
+                </div>
             </div>
         </section>
     </div>
