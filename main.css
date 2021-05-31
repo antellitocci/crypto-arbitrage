@@ -3,7 +3,7 @@ body {
     margin: 0;
     background: #292929;
     font-family: 'Work Sans', sans-serif;
-    font-weight: 800;
+    color: white;
 }
 .navbar-menu {
     background-image: linear-gradient(#292929, #34468e, #3683c0, #34468e, #292929);
@@ -26,7 +26,7 @@ body {
     height: 120px !important;
     background-color: #C7C7BF;
 }
-.content {
+.content{
     background-color: #C7C7BF;
     color: #34468e;
     text-align: center;
@@ -42,11 +42,13 @@ body {
     background-color: #C7C7BF;
 }
 #currency {
+    font-weight: bolder;
+    font-size: 1.5em;
     color: #34468e;
     align-items: baseline;
 }
 .ticker {
-    background-color: #C7C7BF;
+    background-color: rgb(199,199,191,0.35);
 }
 .ti-tick{
     color: #34468e;
