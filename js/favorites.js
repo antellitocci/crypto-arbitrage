@@ -39,3 +39,16 @@ mediaContentElm.append(titleElm, subtitleElm)
 $("#topFiveCoins").append(columnElm)
 }
 })
+// Currency Calculator
+
+// fetch("https:v6.exchangerate-api.com/v6/5cfa0f1ac92d863d75e87104/latest/USD")
+// .then(function(response) {
+//   return response.json();
+// })
+// .then(function(data) {
+//   console.log(data);
+  
+// let currencyName = data[i].
+
+// currencyCalculator(#Calculator);
+// currencyCalculator(#Calculator, {
