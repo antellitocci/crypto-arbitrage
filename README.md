@@ -28,7 +28,7 @@ Butler Boot Camp Project 1 Group 1
 <img src="./assets/images/ca-getting-started-screenshot.png" alt="crypto arbitrage main page screenshot" />
 
 ## Links to Project
-* Website [https://antellitocci.github.io/crypto-artbitrage/](https://antellitocci.github.io/crypto-artbitrage/)
+* Website [https://antellitocci.github.io/crypto-arbitrage/](https://antellitocci.github.io/crypto-arbitrage/)
 * GitHub Repositiory available [here](https://github.com/antellitocci/crypto-arbitrage)
 
 ## Links to Github Portfolio Pages
